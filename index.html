@@ -161,7 +161,15 @@
     max-width: 1200px; 
     margin: 30px auto;
 }
-
+.feature-card-icon-img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    font-size: 40px; /* Use font size to make the emoji larger */
+    line-height: 1; /* Keep it compact */
+    text-align: center;
+    margin: 0 auto 10px auto; /* Center it and add space below */
+    color: var(--botpulse-red); /* Keep the icon color consistent */
+}
 /* Feature Card Styling (Replaces .feature-list li) */
 .feature-card {
     background-color: #2b2b2b;
@@ -172,11 +180,12 @@
     height: 100%; 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
     font-size: 1.1rem;
     transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
     /* Add bottom margin to space cards vertically on mobile/tablet */
     margin-bottom: 20px;
+    align-items: center; /* Center content horizontally */
+    text-align: center;
 }
 
 .feature-card:hover {
@@ -187,7 +196,6 @@
 }
 
 .feature-card i {
-    margin-right: 10px;
     color: var(--botpulse-red);
 }
 
@@ -196,6 +204,7 @@
     margin-bottom: 5px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 
 
@@ -327,8 +336,9 @@
                 <div class="row mt-4">
                     <div class="col-lg-4 col-md-6 mb-4 mb-4">
                         <div class="feature-card">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> 
                             <div class="feature-card-title">
-                                <i class="fa-solid fa-wand-magic-sparkles"></i> 
+                                
                                 <span class="highlight-text-red">VoidWeave Algorithm</span>
                             </div>
                             <p class="mb-0">The most advanced painting method for stunning, detailed, high-fidelity images. Scans the image, and blends pixels as it paints.</p>
@@ -336,8 +346,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="feature-card">
+                            <i class="fa-solid fa-palette"></i> 
                             <div class="feature-card-title">
-                                <i class="fa-solid fa-palette"></i> 
+                                
                                 <span class="highlight-text-red">Adaptive Palette</span>
                             </div>
                             <p class="mb-0">Uses new Hex Color codes and an Adaptive Palette system for more vibrant and accurate tones, including multiple skin tones, while optimizing performance.</p>
@@ -345,8 +356,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="feature-card">
+                            <i class="fa-solid fa-hand-pointer"></i> 
                             <div class="feature-card-title">
-                                <i class="fa-solid fa-hand-pointer"></i> 
+                                
                                 <span class="highlight-text-red">Resume Painting on Click</span>
                             </div>
                             <p class="mb-0">Press <span class="code-snippet">F5</span> and click a point on the canvas to resume from that row.</p>
@@ -354,8 +366,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="feature-card">
+                            <i class="fa-solid fa-floppy-disk"></i> 
                             <div class="feature-card-title">
-                                <i class="fa-solid fa-floppy-disk"></i> 
+                                
                                 <span class="highlight-text-red">Session Save & Load</span>
                             </div>
                             <p class="mb-0">Save and load your painting progress to resume later.</p>
@@ -363,8 +376,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="feature-card">
+                            <i class="fa-solid fa-image"></i> 
                             <div class="feature-card-title">
-                                <i class="fa-solid fa-image"></i> 
+                                
                                 <span class="highlight-text-red">Integrated Image Editor</span>
                             </div>
                             <p class="mb-0">Crop and add text directly within RustForge, no external tools needed.</p>
@@ -372,8 +386,9 @@
                     </div>
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="feature-card">
+                            <i class="fa-solid fa-film"></i> 
                             <div class="feature-card-title">
-                                <i class="fa-solid fa-film"></i> 
+                                
                                 <span class="highlight-text-red">Timelapse GIF Creator & Editor</span>
                             </div>
                             <p class="mb-0">Automatically compile timelapse GIFs of your finished artwork.</p>
@@ -394,8 +409,9 @@
                 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-folder-open"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-folder-open"></i> 
+                            
                             <span class="highlight-text-red">Load Recent Files</span>
                         </div>
                         <p class="mb-0">Quickly access the last 10 used images from a new menu.</p>
@@ -403,8 +419,9 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card-title">
                     <div class="feature-card">
-                        <div class="feature-card-title">
+                        
                             <i class="fa-solid fa-bell"></i> 
                             <span class="highlight-text-red">Real-time Notifications</span>
                         </div>
@@ -414,8 +431,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-ban"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-ban"></i> 
+                            
                             <span class="highlight-text-red">Background Color Ignore</span>
                         </div>
                         <p class="mb-0">Skip specific colors during painting (e.g., white borders) to save time.</p>
@@ -424,8 +442,9 @@
                 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-sliders"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-sliders"></i> 
+                            
                             <span class="highlight-text-red">Customizable Color Tolerance</span>
                         </div>
                         <p class="mb-0">Fine-tune how strictly background colors are ignored.</p>
@@ -434,8 +453,9 @@
                 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-swatchbook"></i>
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-swatchbook"></i> 
+                             
                             <span class="highlight-text-red">Color Space Selection</span>
                         </div>
                         <p class="mb-0">Choose between Euclidean RGB or CIEDE2000 for color matching.</p>
@@ -444,8 +464,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-eye-dropper"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-eye-dropper"></i> 
+                            
                             <span class="highlight-text-red">Transparency Threshold Setting</span>
                         </div>
                         <p class="mb-0">Define a threshold for alpha transparency to skip highly transparent pixels.</p>
@@ -454,8 +475,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-brands fa-discord"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-brands fa-discord"></i> 
+                            
                             <span class="highlight-text-red">Discord Rich Presence</span>
                         </div>
                         <p class="mb-0">Display your painting status in your Discord profile.</p>
@@ -464,8 +486,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-camera-retro"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-camera-retro"></i> 
+                            
                             <span class="highlight-text-red">Screenshot on Finish Toggle</span>
                         </div>
                         <p class="mb-0">Automatically capture a screenshot of your finished painting.</p>
@@ -474,8 +497,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-rocket"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-rocket"></i> 
+                            
                             <span class="highlight-text-red">Dedicated Splash Screen</span>
                         </div>
                         <p class="mb-0">Smoother startup experience with an elegant loading process.</p>
@@ -484,8 +508,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-bug"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-bug"></i> 
+                            
                             <span class="highlight-text-red">Advanced Error Logging & Support Integration</span>
                         </div>
                         <p class="mb-0">Enhanced logging to <span class="code-snippet">RF_Logs.txt</span> and quick access to Discord support.</p>
@@ -494,8 +519,9 @@
                 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-clock"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-clock"></i> 
+                            
                             <span class="highlight-text-red">Mouse Click Delay Setting</span>
                         </div>
                         <p class="mb-0">Control delay for automated mouse movements for reliability.</p>
@@ -508,8 +534,9 @@
             <div class="row mt-4">
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-brush"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-brush"></i> 
+                            
                             <span class="highlight-text-red">VoidWeave Algorithm</span> 
                             <small>(Premium)</small>
                         </div>
@@ -519,8 +546,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-arrow-right"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-arrow-right"></i> 
+                            
                             <span class="highlight-text-red">Scanline</span>
                         </div>
                         <p class="mb-0">Methodical, line-by-line painting.</p>
@@ -529,8 +557,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-paint-roller"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-paint-roller"></i> 
+                            
                             <span class="highlight-text-red">Crayon Eater</span>
                         </div>
                         <p class="mb-0">Distinct painting style with character.</p>
@@ -548,8 +577,9 @@
             <div class="row mt-4">
                 <div class="col-lg-6 col-md-6">
                     <div class="feature-card">
+                        <i class="fa-solid fa-file-image"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-file-image"></i> 
+                            
                             <span class="highlight-text-red">Load an Image</span>
                         </div>
                         <p class="mb-0">Use the main RustForge window to load your desired image by clicking "Load Image...".</p>
@@ -558,8 +588,9 @@
 
                 <div class="col-lg-6 col-md-6">
                     <div class="feature-card">
+                        <i class="fa-solid fa-crosshairs"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-crosshairs"></i> 
+                            
                             <span class="highlight-text-red">Capture Your Regions</span>
                             <small class="ml-2">(Press <span class="code-snippet">Enter</span> after setting Canvas/Palette areas to save)</small>
                         </div>
@@ -570,8 +601,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-gear"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-gear"></i> 
+                            
                             <span class="highlight-text-red">Configure Settings</span>
                         </div>
                         <p class="mb-0">In the settings window, select your preferred paint method, apply filters, and adjust paint speed.</p>
@@ -580,8 +612,9 @@
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-play"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-play"></i> 
+                            
                             <span class="highlight-text-red">Start Painting</span>
                         </div>
                         <p class="mb-0">Once processed and regions defined, press the "Start" hotkey (<span class="code-snippet">F11</span> default) to begin.</p>
@@ -590,8 +623,9 @@
                 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
+                        <i class="fa-solid fa-pause"></i><i class="fa-solid fa-stop ml-1"></i> 
                         <div class="feature-card-title">
-                            <i class="fa-solid fa-pause"></i><i class="fa-solid fa-stop ml-1"></i> 
+                            
                             <span class="highlight-text-red">Pause and Stop</span>
                         </div>
                         <p class="mb-0">Use assigned hotkeys (<span class="code-snippet">F11</span> for pause, <span class="code-snippet">Escape</span> for stop) to control painting.</p>

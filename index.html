@@ -219,6 +219,13 @@
     justify-content: center;
 }
 
+/* --- Added CSS to fix feature card icon spacing/alignment --- */
+.feature-card-title i {
+    margin-right: 8px; /* Add spacing between the icon and text when they are side-by-side */
+    font-size: 1.2rem; /* Reduce the size of the icon when it's inside the title for better inline look */
+    margin-bottom: 0; /* Remove the bottom margin when it's inline */
+}
+/* --- End Added CSS --- */
 
         /* Footer Styling */
         .footer {
@@ -261,6 +268,17 @@
             .btn-rustforge, .btn-primary1-pulse { font-size: 0.9rem; padding: 6px 12px; margin: 5px; }
             .section-title { font-size: 1.8rem; }
             .feature-list li { font-size: 0.9rem; }
+        }
+        
+        .code-snippet {
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--botpulse-red); 
+        }
+
+      
         }
     </style>
 </head>

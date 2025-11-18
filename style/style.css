@@ -1,1 +1,863 @@
+/* Ensure Bootstrap breakpoints don't interfere */
+@media (min-width: 990px) {
+    /* Hide mobile-specific elements */
+    #toggle-sidebar,
+    #mobile-sidebar {
+        display: none !important; /* Force hide hamburger and mobile sidebar */
+    }
 
+    /* Show the desktop sidebar */
+    .sidebar {
+        display: block !important; /* Ensure sidebar is shown */
+    }
+
+    /* Content shifted for sidebar */
+    .content-container {
+        margin-left: 265px; /* Sidebar width */
+        width: 100%; /* Adjust content to account for sidebar */
+    }
+}
+#mobile-sidebar a {
+    color: #b22222;
+    text-decoration: none;
+    background-color: transparent;
+}
+/* Optional: Hover effect if needed */
+#mobile-sidebar a:hover {
+    color: #cc0000; /* Slightly lighter red on hover */
+    background-color: transparent;
+    text-decoration: none;
+}
+.navbar-dark .navbar-nav .nav-link {
+    color: rgb(255 255 255);
+}
+@media (max-width: 988px) {
+    /* Hide the desktop sidebar */
+    .sidebar {
+        display: none !important; /* Force hide the sidebar */
+    }
+
+    /* Show hamburger button */
+    #toggle-sidebar {
+        display: block !important; /* Ensure the hamburger is visible */
+        position: relative;
+        /* margin: 20px; */
+        background: #b22222;
+        border: none;
+        color: #fff;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    /* Initially hide mobile sidebar */
+    #mobile-sidebar {
+        display: none !important; /* Ensure the mobile sidebar is hidden */
+        position: absolute;
+        top: 240px;
+        left: 40px;
+        /* width: 18%; */
+        background-color: #121212;
+        z-index: 1000;
+        box-shadow: 5px 0px 5px rgb(255 0 0 / 25%);
+        padding: 5px;
+    }
+
+    /* Show mobile sidebar when hamburger is clicked */
+    #mobile-sidebar.show {
+        display: block !important; /* Force mobile sidebar to be shown */
+    }
+
+    /* Full width content when sidebar is hidden */
+    .content-container {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+/* Body and General Styles */
+body {
+    background: #202020; /* Black to dark grey gradient */
+    background-size: 400% 400%;
+    animation: backgroundMove 30s ease infinite; /* Slow moving background animation */
+    color: #e0e0e0; /* Light grey text for readability */
+    font-family: 'Ubuntu', sans-serif; /* Use Ubuntu font */
+    margin: 0;
+    padding: 0;
+	
+}
+
+
+@keyframes backgroundMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.bg-dark {
+    /* background-color: #343a40 !important; */
+    background: linear-gradient(135deg, #232526, #414345);
+}
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+}
+/* Special rule for the homepage */
+.homepage .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.header, .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #360d27; /* Base color */
+    color: #f5d0d0;
+    background: linear-gradient(to right, #1a1a1a, #360d27, #8b2946, #b71349c4, #8b2946, #360d27, #1a1a1a); /* Static gradient */
+    background-size: 200%; /* Increase for more gradual gradient effect */
+    animation: subtlePulse 10s ease-in-out infinite; /* Soft animation */
+    border-bottom: 3px solid #b71349; /* Accent border */
+    overflow: hidden;
+    position: relative;
+}
+
+/* Subtle pulsing animation */
+@keyframes subtlePulse {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+}
+
+.header::before, .header::after {
+    content: none; /* Remove unnecessary elements */
+}
+
+
+
+
+
+
+
+.header .logo, .navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.header .logo img, .navbar .logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.header a, .navbar a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.header a:hover, .navbar a:hover {
+    text-decoration: none;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.logout-button {
+    background-color: #ff4b4b;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: #ff5c5c;
+}
+
+/* Form Styles */
+.form-group label {
+    font-weight: bold;
+    color: #b22222; /* Burgundy accent color */
+}
+
+.form-control {
+    background-color: #2b2b2b;
+    border: 1px solid #444444;
+    color: #e0e0e0;
+}
+
+.form-control:focus {
+    background-color: #3a3a3a;
+    border-color: #b22222;
+    box-shadow: none;
+}
+.form-control:active {
+    background-color: #3a3a3a;
+    border-color: #b22222;
+    box-shadow: none;
+}
+.form-control:focus {
+    color: #ffffff;
+    background-color: #2b2b2b;
+    border-color: #cd0000;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0, 123, 255, .25);
+}
+.btn-primarybase {
+    color: #fff;
+    background-color: #5b0000;
+    border-color: #000000;
+}
+.btn-primarybase:hover {
+    background-color: #910000;
+    border-color: #800000;
+    color: #ffffff;
+}
+.btn-primarybase:active {
+    background-color: #5b0000;
+    border-color: #800000;
+}
+.btn-primarybase:focus {
+    background-color: #5b0000;
+    border-color: #800000;
+}
+
+
+.btn-success {
+    background-color: #b22222;
+    border-color: #990000;
+    color: #ffffff;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+.btn-success:not(:disabled):not(.disabled).active, .btn-success:not(:disabled):not(.disabled):active, .show>.btn-success.dropdown-toggle {
+    color: #fff;
+    background-color: #289521;
+    border-color: #1c7430;
+}
+.btn-success:focus {
+    color: #fff;
+    background-color: #289521;
+    border-color: #1c7430;
+    box-shadow: 0 0 0 .2rem rgba(72, 180, 97, .5);
+}
+.btn-success:hover {
+    background-color: #289521;
+    border-color: #1c7430;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #0258b5;
+    border-color: #0058b7;
+}
+/* Footer */
+.footer {
+    background-color: #2b2b2b; /* Dark grey for footer */
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px;
+    border-top: 2px solid #b71349;
+   
+}
+
+/* Additional Styles for Tables, Buttons, Lists, etc. */
+.table {
+    width: 100%;
+    margin-bottom: 20px;
+    background-color: #333333; /* Dark grey table background */
+    border-collapse: collapse;
+    border: 1px solid #444444; /* Slightly lighter border for table */
+    border-radius: 8px; /* Rounded corners for modern look */
+    overflow: hidden; /* Ensures the rounded corners are visible */
+}
+
+.table th, .table td {
+    padding: 12px;
+    border: 1px solid #444444;
+    text-align: left;
+    color: #e0e0e0; /* Light grey text */
+}
+
+.table th {
+    background-color: #2b2b2b; /* Darker grey for table header */
+    color: #db0000; /* Burgundy text in header */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #3a3a3a; /* Slightly lighter grey for odd rows */
+}
+
+.table tbody tr:hover {
+    background-color: #4a4a4a; /* Highlight row on hover */
+}
+
+.list-group-item {
+    background-color: #333333; /* Dark grey for list items */
+    border: 1px solid #444444;
+    color: #e0e0e0;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 4px; /* Rounded corners */
+}
+
+.list-group-item a {
+    color: #b22222; /* Burgundy links */
+    text-decoration: none;
+}
+
+.list-group-item a:hover {
+    color: #cc0000; /* Lighter burgundy on hover */
+    text-decoration: underline;
+}
+/* Highlighted Section for Promos, Messages, Links */
+@media (max-width: 768px) {
+    .highlighted-links {
+        flex-direction: column; /* Stack links vertically */
+        padding: 15px 10px;
+        gap: 10px;
+    }
+
+    .highlighted-links a {
+        justify-content: center; /* Center align links */
+        width: 100%; /* Full width for better visibility */
+    }
+}
+
+.highlighted-links {
+    display: flex;
+    justify-content: center; /* Center the links */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1a1a1a; /* Dark background to match theme */
+    border-bottom: 3px solid #b71349; /* Accent border */
+    color: #fff; /* White text for visibility */
+    font-size: 1.1rem; /* Slightly larger text */
+    gap: 15px; /* Space between links */
+}
+
+.highlighted-links a {
+    display: flex;
+    align-items: center;
+    color: #f5d0d0; /* Soft text color */
+    font-weight: 600; /* Bold text for emphasis */
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.highlighted-links a i {
+    margin-right: 5px;
+    font-size: 1.3rem;
+}
+
+.highlighted-links a:hover {
+    color: #ffffff; /* White text on hover */
+    background-color: #b71349; /* Accent background on hover */
+}
+
+.highlighted-links a.download-link {
+    color: #4CAF50; /* Green for download link */
+}
+
+.highlighted-links a.download-link:hover {
+    background-color: #4CAF50; /* Green hover background */
+    color: #fff;
+}
+
+.highlighted-links a.github-link {
+    color: #6cc644; /* GitHub green color */
+}
+
+.highlighted-links a.github-link:hover {
+    background-color: #6cc644; /* Green hover background */
+    color: #fff;
+}
+
+.highlighted-links a.promo-link {
+    color: #ffd700; /* Gold color for promos */
+}
+
+.highlighted-links a.promo-link:hover {
+    background-color: #ffd700; /* Gold hover background */
+    color: #1a1a1a; /* Dark text */
+}
+
+
+.bot-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.bot-avatar {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.bot-details {
+    color: #e0e0e0;
+}
+
+.bot-details h2 {
+    color: #b22222; 
+}
+
+.bot-details p {
+    font-size: 16px;
+    color: #ccc; 
+}
+
+/* Sidebar Styling */
+.sidebar {
+
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar nav ul li a {
+    color: #e0e0e0;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background-color: #333333;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.sidebar nav ul li a:hover {
+    background-color: #444444;
+}
+
+
+
+/* Main Content Styling */
+.main-content {
+    margin-left: 270px; /* Adjust based on sidebar width */
+    padding: 20px;
+}
+
+/* Sidebar styling */
+.sidebar {
+    width: 280px;
+    min-width: 280px;
+    position: absolute;
+    /* top: 0; */
+    left: 0;
+    background: linear-gradient(135deg, #232526, #414345);
+    background-color: #121212;
+    padding: 20px;
+    box-shadow: 3px 0 30px 0px rgb(183 19 73);
+    height: 100%;
+    margin-top: 55px;
+    top: 78px;
+    transition: width 0.3s ease-in-out;
+}
+/* Sidebar hover effect */
+.sidebar:hover {
+    width: 290px; /* Slightly expand the sidebar on hover */
+}
+
+/* Sidebar navigation links */
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+/* Link styles */
+.sidebar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background 0.3s ease, color 0.3s ease;
+    background: rgba(255, 255, 255, 0.05); /* Subtle background effect */
+}
+
+.nav-link.active {
+    background: rgb(255 255 255 / 15%);
+    box-shadow: 0 4px 10px rgb(183 19 73); /* Green shadow */
+    color: #d0e8d0; /* Softer greenish-white text color */
+}
+.sidebar ul li a:hover {
+    background: rgb(255 255 255 / 15%);
+    color: #d0e8d0;
+    box-shadow: 0 4px 10px rgb(183 19 73);
+}
+
+
+/* Link icon styles (if you have icons) */
+.sidebar ul li a i {
+    margin-right: 10px;
+    color: #ffdd57; /* Icon color */
+}
+
+/* Sidebar heading (optional) */
+.sidebar h2 {
+    color: #ffdd57;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 0 4px 10px rgba(255, 221, 87, 0.7); /* Glowing effect for title */
+}
+.server-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.server-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.server-icon {
+    width: 80px;
+    height: 80px;
+    margin-right: 5px;
+    border-radius: 40px;
+}
+
+/* Adjust the main content container to account for the sidebar */
+.content-container {
+    /* margin-left: 0; Default margin for larger screens */
+    padding: 20px;
+   /* width: calc(100% - 220px);  Adjust width based on the sidebar */
+}
+
+/* Ensures footer is placed at the bottom of the page */
+body {
+    display: block;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensures the body takes the full viewport height */
+    position: relative; /* Makes sure the footer is positioned relative to the body */
+}
+
+.page-wrapper {
+    padding-bottom: 60px; /* Space for the footer height */
+}
+
+footer {
+    position: absolute;
+    bottom: -180px;
+    left: 0;
+    width: 100%; /* Footer spans the full width */
+    background-color: #1a1a1a; /* Dark background */
+    padding: 10px 0; /* Standard padding */
+    text-align: center;
+    color: #fff; /* White text */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    margin: 0;
+    font-size: 1em;
+}
+
+
+/* Navbar styling */
+.navbar {
+    background-color: #343a40;
+    color: white;
+    padding: 10px 15px;
+}
+
+.navbar .logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.navbar .nav-links a {
+    color: white;
+    margin-right: 15px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar .nav-links .logout-button {
+    background-color: #dc3545;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.navbar .nav-links a:hover,
+.navbar .nav-links .logout-button:hover {
+    background-color: #495057;
+    color: white;
+    text-decoration: none;
+}
+/* Add the bot avatar styling */
+.cta-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+}
+/* Premium Section Styling */
+.premium {
+    padding: 40px 0;
+}
+
+.premium h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.premium p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.tier-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.tier-card {
+    background: linear-gradient(135deg, #1a1a1a, #2e2e2e);
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    text-align: center;
+    color: #fff;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 15px;
+}
+
+.tier-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+.tier-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #ffcc00;
+}
+
+.tier-card .price {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.tier-card .price span {
+    font-size: 0.9rem;
+    color: #aaa;
+}
+
+.tier-card .features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.tier-card .features li {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.tier-card button {
+    background: #ffcc00;
+    border: none;
+    color: #000;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+}
+
+.tier-card button:hover {
+    background: #e6b800;
+}
+/* Commands Section Styling */
+.command-list {
+    background-color: #1f1f1f; /* Slightly lighter than the dark background */
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.command-list h3 {
+    font-size: 1.75rem;
+    color: #a72d3a;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.command-list ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.command-list .list-group-item {
+    background-color: #2a2a2a; /* Darker background for the list items */
+    color: #ddd;
+    border: none;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.command-list .list-group-item:hover {
+    background-color: #333333;
+    color: #fff;
+}
+
+.command-list .list-group-item strong {
+    color: #b22222; /* Accent color for command names */
+}
+
+.command-list.premium-commands h3 {
+    color: #ffd700; /* Gold color to emphasize premium features */
+}
+ .fixed-alert {
+        position: fixed;
+        top: 11.2%;
+        left: 55%;
+        transform: translateX(-50%);
+        z-index: 1000; /* Ensures the message is above other content */
+        width: 50%;
+        text-align: center;
+        padding: 1rem;
+    }
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 5px;
+    }
+
+   .alert-success {
+    background-color: #00a10c8a;
+    color: #ffffff;
+	border: 1px solid #444444;
+}
+
+    .alert-danger {
+        background-color: #b22222a3;
+        color: #ffffff;
+    }
+/* Add transition and hover effect to the stat cards */
+.stat-card {
+    background: #2d2f36;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    min-height: 160px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add transition */
+	cursor: pointer;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px); /* Move the card up slightly on hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Add shadow on hover */
+}
+.modal {
+    position: fixed;
+    top: ;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    outline: 0;
+}
+.modal-header {
+   background: linear-gradient(to right, #1a1a1a, #360d27, #8b2946, #b71349c4, #8b2946, #360d27, #1a1a1a);
+    background-size: 600% 600%;
+    animation: backgroundShift 15s linear infinite, glowingBorder 4s ease-in-out infinite;
+    border-bottom: 3px solid #b71349;
+    color: white;
+    padding: 15px 30px;
+	
+}
+
+.modal-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.stat-card h6 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.stat-card p {
+    font-size: 0.85rem;
+    margin-bottom: 4px;
+    color: #b0b0b0;
+}
+
+.modal-footer .btn-gradient {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c); /* Gradient for buttons */
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    transition: background 0.3s ease, transform 0.3s ease; /* Add transform transition */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.modal-footer .btn-gradient:hover {
+    background: linear-gradient(45deg, #ff416c, #ff4b2b); /* Inverted gradient on hover */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Button moves slightly up on hover */
+}
+
+.close {
+    font-size: 1.4rem;
+    padding: 5px;
+}
+
+@media (max-width: 1079px) {
+    .modal-lg {
+        max-width: 95%;
+    }
+
+    .stat-card {
+        min-height: auto;
+        margin-bottom: 15px;
+    }
+}

@@ -43,7 +43,11 @@
         .navbar-brand img {
             margin-right: 10px;
         }
-
+        
+        .nav-link:hover {
+        color: var(--botpulse-red) !important; /* Change color on hover */
+        }
+        
         .nav-link {
             color: #e0e0e0 !important;
             transition: color 0.2s ease;
@@ -167,6 +171,13 @@
             display: flex;
             align-items: center;
             font-size: 1.1rem;
+            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+        }
+        .feature-list li:hover {
+            transform: translateY(-5px); /* Lift the card slightly */
+            background-color: #383838; /* Darker background on hover */
+            box-shadow: 0 8px 15px rgba(183, 19, 73, 0.4); /* Shadow using botpulse-red */
+            cursor: pointer; /* Indicate it's interactive */
         }
         .feature-list li i {
             margin-right: 10px;

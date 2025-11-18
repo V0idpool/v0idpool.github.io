@@ -157,36 +157,45 @@
             color: var(--botpulse-red);
         }
 
-        /* Feature List Styling */
-        .feature-list {
-            text-align: left;
-            max-width: 800px;
-            margin: 30px auto;
-            list-style: none;
-            padding: 0;
-        }
+       /* Feature Card Container Styling (Replaces .feature-list) */
+.feature-grid-container {
+    max-width: 1200px; /* Increase max width to show more columns */
+    margin: 30px auto;
+}
 
-        .feature-list li {
-            background-color: #2b2b2b; /* Slightly lighter background for list items */
-            margin-bottom: 10px;
-            padding: 15px;
-            border-left: 5px solid var(--highlight-yellow); /* Retaining yellow accent */
-            border-radius: 5px;
-            display: flex;
-            align-items: center;
-            font-size: 1.1rem;
-            transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-        }
-        .feature-list li:hover {
-            transform: translateY(-5px); /* Lift the card slightly */
-            background-color: #383838; /* Darker background on hover */
-            box-shadow: 0 8px 15px rgba(183, 19, 73, 0.4); /* Shadow using botpulse-red */
-            cursor: pointer; /* Indicate it's interactive */
-        }
-        .feature-list li i {
-            margin-right: 10px;
-            color: var(--botpulse-red); /* Using BotPulse red for icons */
-        }
+/* Feature Card Styling (Replaces .feature-list li) */
+.feature-card {
+    background-color: #2b2b2b;
+    margin-bottom: 20px; /* Add margin for spacing between cards */
+    padding: 15px;
+    border-left: 5px solid var(--highlight-yellow);
+    border-radius: 5px;
+    height: 100%; /* Important for equal height in a row */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the left */
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    background-color: #383838; /* Darker background on hover */
+    box-shadow: 0 8px 15px rgba(183, 19, 73, 0.4); /* Shadow using botpulse-red */
+    cursor: pointer;
+}
+
+.feature-card i {
+    margin-right: 10px;
+    color: var(--botpulse-red);
+}
+
+.feature-card-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+}
 
 
         /* Footer Styling */
@@ -300,7 +309,7 @@
     </section>
 
     <section class="cta-section" id="premium">
-        <div class="container">
+       <div class="container feature-grid-container">
             <div class="cta-content">
                 <h2 class="section-title">Support Development & Get Premium Access</h2>
                 <p>Premium unlocks advanced features and helps fund ongoing development. Access is granted through BuyMeACoffee donations or by joining a BMAC membership tier (Membership tiers offer Early Access builds and more).</p>
@@ -331,64 +340,161 @@
     </section>
 
     <section class="cta-section" id="features">
-        <div class="container">
+       <div class="container feature-grid-container">
             <h2 class="section-title">Key Features</h2>
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-folder-open"></i> <span class="highlight-text-red">Load Recent Files</span>: Quickly access the last 10 used images from a new menu.</li>
-                <li><i class="fa-solid fa-bell"></i> <span class="highlight-text-red">Real-time Notifications</span>: Toast notifications for paint session status (start, pause, stop).</li>
-                <li><i class="fa-solid fa-ban"></i> <span class="highlight-text-red">Background Color Ignore</span>: Skip specific colors during painting (e.g., white borders) to save time.</li>
-                <li><i class="fa-solid fa-sliders"></i> <span class="highlight-text-red">Customizable Color Tolerance</span>: Fine-tune how strictly background colors are ignored.</li>
-                <li><i class="fa-solid fa-swatchbook"></i> <span class="highlight-text-red">Color Space Selection</span>: Choose between Euclidean RGB or CIEDE2000 for color matching.</li>
-                <li><i class="fa-solid fa-eye-dropper"></i> <span class="highlight-text-red">Transparency Threshold Setting</span>: Define a threshold for alpha transparency to skip highly transparent pixels.</li>
-                <li><i class="fa-brands fa-discord"></i> <span class="highlight-text-red">Discord Rich Presence</span>: Display your painting status in your Discord profile.</li>
-                <li><i class="fa-solid fa-camera-retro"></i> <span class="highlight-text-red">Screenshot on Finish Toggle</span>: Automatically capture a screenshot of your finished painting.</li>
-                <li><i class="fa-solid fa-rocket"></i> <span class="highlight-text-red">Dedicated Splash Screen</span>: Smoother startup experience with an elegant loading process.</li>
-                <li><i class="fa-solid fa-bug"></i> <span class="highlight-text-red">Advanced Error Logging & Support Integration</span>: Enhanced logging to <span class="code-snippet">RF_Logs.txt</span> and quick access to Discord support.</li>
-                <li><i class="fa-solid fa-clock"></i> <span class="highlight-text-red">Mouse Click Delay Setting</span>: Control delay for automated mouse movements for reliability.</li>
-            </ul>
+            <div class="row">
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-folder-open"></i> 
+                            <span class="highlight-text-red">Load Recent Files</span>
+                        </div>
+                        <p class="mb-0">Quickly access the last 10 used images from a new menu.</p>
+                    </div>
+                </div>
 
-            <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">🎨 Multiple Painting Methods</h3>
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-brush"></i> <span class="highlight-text-red">VoidWeave Algorithm</span> (Premium): Default, most advanced, high-fidelity for complex images.</li>
-                <li><i class="fa-solid fa-arrow-right"></i> <span class="highlight-text-red">Scanline</span>: Methodical, line-by-line painting.</li>
-                <li><i class="fa-solid fa-paint-roller"></i> <span class="highlight-text-red">Crayon Eater</span>: Distinct painting style with character.</li>
-            </ul>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-bell"></i> 
+                            <span class="highlight-text-red">Real-time Notifications</span>
+                        </div>
+                        <p class="mb-0">Toast notifications for paint session status (start, pause, stop).</p>
+                    </div>
+                </div>
 
-            <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">🖼️ Image Filters</h3>
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-xmark"></i> <span class="highlight-text-red">None</span>: Original image.</li>
-                <li><i class="fa-solid fa-book-open"></i> <span class="highlight-text-red">Comic Filter</span>: Cartoon-like appearance.</li>
-                <li><i class="fa-solid fa-brush"></i> <span class="highlight-text-red">Oil Paint</span>: Painterly effect.</li>
-                <li><i class="fa-solid fa-braille"></i> <span class="highlight-text-red">Pixel Art / Mosaic</span>: Simplified pixelated look.</li>
-                <li><i class="fa-solid fa-pencil"></i> <span class="highlight-text-red">Charcoal Sketch</span>: Black and white sketch.</li>
-                <li><i class="fa-solid fa-certificate"></i> <span class="highlight-text-red">Dithering</span>: Reduces colors, creates illusion of more.</li>
-                <li><i class="fa-solid fa-image-portrait"></i> <span class="highlight-text-red">Sepia Tone</span>: Antique, vintage look.</li>
-                <li><i class="fa-solid fa-cube"></i> <span class="highlight-text-red">Emboss</span>: Raised, 3D effect.</li>
-                <li><i class="fa-solid fa-paint-brush"></i> <span class="highlight-text-red">Watercolor</span>: Smooth, painterly effect.</li>
-                <li><i class="fa-solid fa-pen-nib"></i> <span class="highlight-text-red">Line Art</span>: High-contrast sketch, preserving/generating lines. (Perfect to color in images yourself!)</li>
-                <li><i class="fa-solid fa-yin-yang"></i> <span class="highlight-text-red">Grayscale</span>: Removes all color.</li>
-            </ul>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-ban"></i> 
+                            <span class="highlight-text-red">Background Color Ignore</span>
+                        </div>
+                        <p class="mb-0">Skip specific colors during painting (e.g., white borders) to save time.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-sliders"></i> 
+                            <span class="highlight-text-red">Customizable Color Tolerance</span>
+                        </div>
+                        <p class="mb-0">Fine-tune how strictly background colors are ignored.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-swatchbook"></i> 
+                            <span class="highlight-text-red">Color Space Selection</span>
+                        </div>
+                        <p class="mb-0">Choose between Euclidean RGB or CIEDE2000 for color matching.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-eye-dropper"></i> 
+                            <span class="highlight-text-red">Transparency Threshold Setting</span>
+                        </div>
+                        <p class="mb-0">Define a threshold for alpha transparency to skip highly transparent pixels.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-brands fa-discord"></i> 
+                            <span class="highlight-text-red">Discord Rich Presence</span>
+                        </div>
+                        <p class="mb-0">Display your painting status in your Discord profile.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-camera-retro"></i> 
+                            <span class="highlight-text-red">Screenshot on Finish Toggle</span>
+                        </div>
+                        <p class="mb-0">Automatically capture a screenshot of your finished painting.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-rocket"></i> 
+                            <span class="highlight-text-red">Dedicated Splash Screen</span>
+                        </div>
+                        <p class="mb-0">Smoother startup experience with an elegant loading process.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-bug"></i> 
+                            <span class="highlight-text-red">Advanced Error Logging & Support Integration</span>
+                        </div>
+                        <p class="mb-0">Enhanced logging to <span class="code-snippet">RF_Logs.txt</span> and quick access to Discord support.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-clock"></i> 
+                            <span class="highlight-text-red">Mouse Click Delay Setting</span>
+                        </div>
+                        <p class="mb-0">Control delay for automated mouse movements for reliability.</p>
+                    </div>
+                </div>
+
+            </div>
             
-            <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">✨ Smoothing & Sharpening Filters</h3>
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-xmark"></i> <span class="highlight-text-red">None</span>: No smoothing or sharpening.</li>
-                <li><i class="fa-solid fa-droplet"></i> <span class="highlight-text-red">Gaussian</span> (3x3, 5x5, 7x7): Blurs image to reduce noise and detail.</li>
-                <li><i class="fa-solid fa-grip"></i> <span class="highlight-text-red">Median</span> (3x3, 5x5, 7x7, 9x9): Removes "salt and pepper" noise while preserving edges.</li>
-                <li><i class="fa-solid fa-calculator"></i> <span class="highlight-text-red">Mean</span> (3x3, 5x5): Simple averaging filter to smooth image.</li>
-                <li><i class="fa-solid fa-wave-square"></i> <span class="highlight-text-red">LowPass</span> (3x3, 5x5): Smooths image by reducing high-frequency details.</li>
-                <li><i class="fa-solid fa-scissors"></i> <span class="highlight-text-red">Sharpen</span> (3x3): Enhances image edges for a sharper look.</li>
-            </ul>
+            <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">🎨 Multiple Painting Methods</h3>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-brush"></i> 
+                            <span class="highlight-text-red">VoidWeave Algorithm</span> 
+                            <small>(Premium)</small>
+                        </div>
+                        <p class="mb-0">Default, most advanced, high-fidelity for complex images. Scans the image, and blends pixels as it paints.</p>
+                    </div>
+                </div>
 
-            <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">🛠️ Utilities</h3>
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-keyboard"></i> <span class="highlight-text-red">Configurable Hotkeys</span>: Customize hotkeys for start, pause, stop.</li>
-                <li><i class="fa-solid fa-hourglass-half"></i> <span class="highlight-text-red">Accurate Painting Time Estimation</span>: Dedicated form for estimated painting time.</li>
-            </ul>
-        </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-arrow-right"></i> 
+                            <span class="highlight-text-red">Scanline</span>
+                        </div>
+                        <p class="mb-0">Methodical, line-by-line painting.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-paint-roller"></i> 
+                            <span class="highlight-text-red">Crayon Eater</span>
+                        </div>
+                        <p class="mb-0">Distinct painting style with character.</p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
     </section>
 
     <section class="cta-section" id="how-to-use">
-        <div class="container">
+       <div class="container feature-grid-container">
             <h2 class="section-title">How to Use RustForge</h2>
             <ul class="feature-list">
                 <li><i class="fa-solid fa-file-image"></i> <span class="highlight-text-red">Load an Image</span>: Use the main RustForge window to load your desired image by clicking "Load Image...".</li>

@@ -97,7 +97,19 @@
             color: var(--text-color);
             margin-bottom: 1.5rem;
         }
+        .hero-feature-list {
+            list-style-type: none; /* This removes the bullet points */
+            padding-left: 0; /* This removes the default left padding browsers apply to <ul> */
+            margin-bottom: 1.5rem; /* Optional: adds space below the list, matching other elements */
+        }
 
+        /* Optional: Center the list on smaller screens if you want, assuming it takes up the full width of its container. */
+        @media (max-width: 767px) {
+        .hero-feature-list li {
+        text-align: left; /* Ensure text remains readable if centered */
+        display: block;
+        }
+    }
         /* Primary Button (Adapted from BotPulse btn-primary1) */
         .btn-rustforge, .btn-primary1-pulse {
             display: inline-flex;

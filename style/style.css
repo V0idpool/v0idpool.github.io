@@ -164,10 +164,9 @@ body {
 
 .header a:hover, .navbar a:hover {
     text-decoration: none;
-    background: #912200;
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
-
 .logout-button {
     background-color: #ff4b4b;
     color: #fff;

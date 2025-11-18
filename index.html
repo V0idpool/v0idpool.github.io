@@ -286,17 +286,17 @@
         </div>
     </nav>
 
-    <section class="hero-section" id="home">
+   <section class="hero-section" id="home">
         <div class="hero-content">
             <h1 class="hero-title">RustForge</h1>
             <p class="hero-subtitle">Automated In-Game Sign Painter for Rust</p>
             <p>RustForge takes any image, automatically converts it to the closest Rust color palette (or uses the new adaptive palette for up to 512 colors), and paints it directly onto a sign in-game.</p>
             <p>It’s perfect for adding custom, high-quality art to your base without spending hours on it.</p>
             
-            <ul style="list-style-type: none;display: grid;padding: 0;margin: 20px 0;justify-content: center;">
-                <li style="justify-content: left; display: flex; align-items: center;"><i class="fa-solid fa-paintbrush" style="margin-right: 10px; color: var(--highlight-yellow);"></i> Automated In-Game Painting</li>
-                <li style="justify-content: left; display: flex; align-items: center;"><i class="fa-solid fa-palette" style="margin-right: 10px; color: var(--highlight-yellow);"></i> Adaptive Color Palette Support</li>
-                <li style="justify-content: left; display: flex; align-items: center;"><i class="fa-solid fa-image" style="margin-right: 10px; color: var(--highlight-yellow);"></i> Integrated Image Editor (Premium)</li>
+            <ul class="hero-feature-list">
+                <li><i class="fa-solid fa-paintbrush" style="margin-right: 10px; color: var(--highlight-yellow);"></i> Automated In-Game Painting</li>
+                <li><i class="fa-solid fa-palette" style="margin-right: 10px; color: var(--highlight-yellow);"></i> Adaptive Color Palette Support</li>
+                <li><i class="fa-solid fa-image" style="margin-right: 10px; color: var(--highlight-yellow);"></i> Integrated Image Editor (Premium)</li>
             </ul>
 
             <a class="btn btn-primary1-pulse" href="https://discord.gg/R4bR9JwAfv" target="_blank">
@@ -323,15 +323,62 @@
                 </p>
                 
                 <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">✨ Premium Features</h3>
-                <ul class="feature-list">
-                    <li><i class="fa-solid fa-wand-magic-sparkles"></i> <span class="highlight-text-red">VoidWeave Algorithm</span> – The most advanced painting method for stunning, detailed, high-fidelity images. Scans the image, and blends pixels as it paints.</li>
-                    <li><i class="fa-solid fa-palette"></i> <span class="highlight-text-red">Adaptive Palette</span> – Uses new Hex Color codes and an Adaptive Palette system for more vibrant and accurate tones, including multiple skin tones, while optimizing performance.</li>
-                    <li><i class="fa-solid fa-hand-pointer"></i> <span class="highlight-text-red">Resume Painting on Click</span> – Press <span class="code-snippet">F5</span> and click a point on the canvas to resume from that row.</li>
-                    <li><i class="fa-solid fa-floppy-disk"></i> <span class="highlight-text-red">Session Save & Load</span> – Save and load your painting progress to resume later.</li>
-                    <li><i class="fa-solid fa-image"></i> <span class="highlight-text-red">Integrated Image Editor</span> – Crop and add text directly within RustForge, no external tools needed.</li>
-                    <li><i class="fa-solid fa-film"></i> <span class="highlight-text-red">Timelapse GIF Creator & Editor</span> – Automatically compile timelapse GIFs of your finished artwork.</li>
-                </ul>
-                
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-card-title">
+                                <i class="fa-solid fa-wand-magic-sparkles"></i> 
+                                <span class="highlight-text-red">VoidWeave Algorithm</span>
+                            </div>
+                            <p class="mb-0">The most advanced painting method for stunning, detailed, high-fidelity images. Scans the image, and blends pixels as it paints.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-card-title">
+                                <i class="fa-solid fa-palette"></i> 
+                                <span class="highlight-text-red">Adaptive Palette</span>
+                            </div>
+                            <p class="mb-0">Uses new Hex Color codes and an Adaptive Palette system for more vibrant and accurate tones, including multiple skin tones, while optimizing performance.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-card-title">
+                                <i class="fa-solid fa-hand-pointer"></i> 
+                                <span class="highlight-text-red">Resume Painting on Click</span>
+                            </div>
+                            <p class="mb-0">Press <span class="code-snippet">F5</span> and click a point on the canvas to resume from that row.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-card-title">
+                                <i class="fa-solid fa-floppy-disk"></i> 
+                                <span class="highlight-text-red">Session Save & Load</span>
+                            </div>
+                            <p class="mb-0">Save and load your painting progress to resume later.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-card-title">
+                                <i class="fa-solid fa-image"></i> 
+                                <span class="highlight-text-red">Integrated Image Editor</span>
+                            </div>
+                            <p class="mb-0">Crop and add text directly within RustForge, no external tools needed.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="feature-card">
+                            <div class="feature-card-title">
+                                <i class="fa-solid fa-film"></i> 
+                                <span class="highlight-text-red">Timelapse GIF Creator & Editor</span>
+                            </div>
+                            <p class="mb-0">Automatically compile timelapse GIFs of your finished artwork.</p>
+                        </div>
+                    </div>
+                </div>
                 <a class="btn btn-primary1-pulse mt-4" href="https://buymeacoffee.com/rustforgedev" target="_blank">
                     <i class="fa-solid fa-crown"></i> Get Premium
                 </a>
@@ -496,27 +543,103 @@
     <section class="cta-section" id="how-to-use">
        <div class="container feature-grid-container">
             <h2 class="section-title">How to Use RustForge</h2>
-            <ul class="feature-list">
-                <li><i class="fa-solid fa-file-image"></i> <span class="highlight-text-red">Load an Image</span>: Use the main RustForge window to load your desired image by clicking "Load Image...".</li>
-                <li><i class="fa-solid fa-crosshairs"></i> <span class="highlight-text-red">Capture Your Regions</span>: (Press <span class="code-snippet">Enter</span> after setting Canvas/Palette areas to save)
-                    <ul>
-                        <li><i class="fa-solid fa-paint-brush"></i> <span class="highlight-text-red">Palette</span>: Use hotkey (<span class="code-snippet">F10</span> default) to draw a box around the in-game color palette. (ONLY CAPTURE THE COLOR PALETTE AREA)</li>
-                        <li><i class="fa-solid fa-vector-square"></i> <span class="highlight-text-red">Canvas</span>: Use hotkey (<span class="code-snippet">F9</span> default) to draw a box around the in-game canvas where painting will occur.</li>
-                    </ul>
-                </li>
-                <li><i class="fa-solid fa-gear"></i> <span class="highlight-text-red">Configure Settings</span>: In the settings window, select your preferred paint method, apply filters, and adjust paint speed.</li>
-                <li><i class="fa-solid fa-play"></i> <span class="highlight-text-red">Start Painting</span>: Once processed and regions defined, press the "Start" hotkey (<span class="code-snippet">F11</span> default) to begin.</li>
-                <li><i class="fa-solid fa-pause"></i><i class="fa-solid fa-stop"></i> <span class="highlight-text-red">Pause and Stop</span>: Use assigned hotkeys (<span class="code-snippet">F11</span> for pause, <span class="code-snippet">Escape</span> for stop) to control painting.</li>
-            </ul>
+            
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-file-image"></i> 
+                            <span class="highlight-text-red">Load an Image</span>
+                        </div>
+                        <p class="mb-0">Use the main RustForge window to load your desired image by clicking "Load Image...".</p>
+                    </div>
+                </div>
 
+                <div class="col-lg-6 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-crosshairs"></i> 
+                            <span class="highlight-text-red">Capture Your Regions</span>
+                            <small class="ml-2">(Press <span class="code-snippet">Enter</span> after setting Canvas/Palette areas to save)</small>
+                        </div>
+                        <p class="mb-1"><i class="fa-solid fa-paint-brush"></i> <span class="highlight-text-red">Palette</span>: Use hotkey (<span class="code-snippet">F10</span> default) to draw a box around the in-game color palette. (ONLY CAPTURE THE COLOR PALETTE AREA)</p>
+                        <p class="mb-0"><i class="fa-solid fa-vector-square"></i> <span class="highlight-text-red">Canvas</span>: Use hotkey (<span class="code-snippet">F9</span> default) to draw a box around the in-game canvas where painting will occur.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-gear"></i> 
+                            <span class="highlight-text-red">Configure Settings</span>
+                        </div>
+                        <p class="mb-0">In the settings window, select your preferred paint method, apply filters, and adjust paint speed.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-play"></i> 
+                            <span class="highlight-text-red">Start Painting</span>
+                        </div>
+                        <p class="mb-0">Once processed and regions defined, press the "Start" hotkey (<span class="code-snippet">F11</span> default) to begin.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <i class="fa-solid fa-pause"></i><i class="fa-solid fa-stop ml-1"></i> 
+                            <span class="highlight-text-red">Pause and Stop</span>
+                        </div>
+                        <p class="mb-0">Use assigned hotkeys (<span class="code-snippet">F11</span> for pause, <span class="code-snippet">Escape</span> for stop) to control painting.</p>
+                    </div>
+                </div>
+            </div>
             <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">⌨️ Default Hotkeys</h3>
-            <ul class="feature-list">
-                <li><span class="code-snippet">F9</span>: <span class="highlight-text-red">Canvas Overlay Toggle</span> - Toggles the canvas selection overlay.</li>
-                <li><span class="code-snippet">F10</span>: <span class="highlight-text-red">Palette Overlay Toggle</span> - Toggles the palette selection overlay.</li>
-                <li><span class="code-snippet">F11</span>: <span class="highlight-text-red">Start/Pause</span> - Starts or pauses the painting process.</li>
-                <li><span class="code-snippet">Escape</span>: <span class="highlight-text-red">Stop</span> - Immediately stops the painting process.</li>
-                <li><span class="code-snippet">F5</span>: <span class="highlight-text-red">Resume On Click</span> - Click a point on the canvas to resume from that row.</li>
-            </ul>
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">F9</span>: <span class="highlight-text-red">Canvas Overlay Toggle</span>
+                        </div>
+                        <p class="mb-0">Toggles the canvas selection overlay.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">F10</span>: <span class="highlight-text-red">Palette Overlay Toggle</span>
+                        </div>
+                        <p class="mb-0">Toggles the palette selection overlay.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">F11</span>: <span class="highlight-text-red">Start/Pause</span>
+                        </div>
+                        <p class="mb-0">Starts or pauses the painting process.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">Escape</span>: <span class="highlight-text-red">Stop</span>
+                        </div>
+                        <p class="mb-0">Immediately stops the painting process.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">F5</span>: <span class="highlight-text-red">Resume On Click</span>
+                        </div>
+                        <p class="mb-0">Click a point on the canvas to resume from that row.</p>
+                    </div>
+                </div>
+            </div>
             <p class="text-center mt-3">Hotkeys are configurable in the settings window.</p>
         </div>
     </section>

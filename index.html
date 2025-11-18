@@ -4,174 +4,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rustforge | The Ultimate Rust Sign Painter Utility</title>
+    <title>RustForge | Automated In-Game Sign Painter for Rust</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <meta name="description" content="Rustforge: Automatically convert any image to the Rust color palette and paint it onto signs, providing high-quality custom art in-game.">
-    <meta property="og:title" content="Rustforge | The Ultimate Rust Sign Painter Utility" />
-    <meta property="og:url" content="https://yourusername.github.io/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Rustforge: Automatically convert any image to the Rust color palette and paint it onto signs, providing high-quality custom art in-game." />
-    <meta property="og:image" content="path/to/RustforgePreview.png" /> 
-    <link rel="icon" type="image/png" href="path/to/Rustforge_favicon.png" /> 
+    <meta name="description" content="RustForge automatically converts images to the Rust color palette and paints them onto in-game signs with precision. Supports adaptive palette, resume painting, and an integrated editor.">
+    <meta property="og:title" content="RustForge | Automated In-Game Sign Painter for Rust" />
+    <meta property="og:url" content="https://yourusername.github.io/rustforge" /> <meta property="og:type" content="website" />
+    <meta property="og:description" content="RustForge automatically converts images to the Rust color palette and paints them onto in-game signs with precision. Supports adaptive palette, resume painting, and an integrated editor." />
+    <meta property="og:image" content="https://i.imgur.com/your-rustforge-preview.png" /> <meta property="og:image:alt" content="RustForge Software Preview" />
+    <link rel="icon" type="image/png" href="https://i.imgur.com/your-rustforge-favicon.png" /> <style>
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            background-color: #121212; /* Darker background */
+            color: #e0e0e0;
+        }
 
-    <style>
-/* --- Global & Utility Styles --- */
-body {
-    font-family: 'Ubuntu', sans-serif;
-    background-color: #1a1a1a; /* Dark background */
-    color: #e0e0e0;
-}
-.card-hover:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 4px 15px rgba(255, 106, 0, 0.4); /* Glow effect on hover */
-    transition: all 0.3s ease-in-out;
-}
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease-in-out;
+        }
 
-/* --- Hero Section Styles --- */
-.hero-section {
-    /* Replace with a Rust-themed background image, or use a solid color */
-    /* Example background for a dark, industrial/rust feel */
-    /* background-image: url('path/to/rust-texture.jpg'); */
-    background-color: #2e2e2e;
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-bottom: 4px solid #ff6a00; /* Burnt Orange accent line */
-}
+        .hero-section {
+            /* Replace with your RustForge background image */
+            /* background-image: url('path/to/your/rustforge-bg.jpg'); */ 
+            background-color: #1a1a1a; /* Fallback solid dark color */
+            background-size: cover;
+            background-position: center;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 3px solid #ff4747; /* Voidpool HQ red accent */
+        }
 
-.hero-content {
-    background-color: rgba(0, 0, 0, 0.75);
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 90%;
-    margin: 0 auto;
-}
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.65); /* Semi-transparent overlay */
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        .hero-content a {
+            margin: 20px auto;
+        }
 
-.hero-title {
-    font-size: 2.8rem;
-    font-weight: 700;
-    color: #ff6a00; /* Primary Rust Orange */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
-}
+        .hero-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #ff4747; /* Voidpool HQ red */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
 
-.hero-subtitle {
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: #e65c00; /* Secondary Darker Orange */
-}
+        .hero-subtitle {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: #f1c40f; /* Voidpool HQ yellow */
+        }
 
-/* --- Custom Forge Button (Replaces .btn-chimi) --- */
-.btn-forge {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 15px 30px;
-    margin: 20px 10px;
-    background-color: #ff6a00; /* Primary Rust Orange */
-    color: #000000;
-    text-align: center;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    text-decoration: none;
-    border: 3px solid #e65c00;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-}
-.btn-forge i {
-    margin-right: 10px;
-}
-.btn-forge:hover {
-    background-color: #e65c00; /* Darker orange on hover */
-    border-color: #ff6a00;
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(255, 106, 0, 0.6);
-}
+        /* Re-purpose .btn-chimi for RustForge buttons */
+        .btn-rustforge {
+            display: inline-flex; /* Use inline-flex for better alignment in lists */
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 25px; /* Adjust padding to make it a standard button size */
+            background-color: #ff4747; /* Voidpool HQ red as primary button color */
+            color: #ffffff;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px; /* Slightly rounded corners */
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            margin: 10px; /* Add some margin for spacing */
+        }
 
-/* --- CTA Section Styles --- */
-.cta-section {
-    background-color: #2e2e2e;
-    padding: 50px 20px;
-    color: #ffffff;
-    text-align: center;
-    border-top: 4px solid #ff6a00;
-}
+        .btn-rustforge i {
+            margin-right: 8px; /* Space out icon from text */
+        }
 
-.cta-content {
-    max-width: 900px;
-    margin: 0 auto;
-}
+        .btn-rustforge:hover {
+            transform: scale(1.05);
+            background-color: #d40045; /* Darker red on hover */
+            box-shadow: 0px 4px 15px rgba(255, 68, 68, 0.6);
+            color: #ffffff; /* Ensure text stays white on hover */
+            text-decoration: none; /* Remove underline on hover */
+        }
 
-.section-title {
-    font-size: 2.2rem;
-    font-weight: 700;
-    margin-bottom: 1.5rem;
-    color: #ff6a00; /* Primary Rust Orange */
-}
+        .btn-rustforge:active {
+            transform: scale(0.95);
+            box-shadow: none;
+        }
 
-/* --- Footer Styles --- */
-.footer {
-    background-color: #121212;
-    color: #e0e0e0;
-    padding: 20px;
-    text-align: center;
-    border-top: 2px solid #e65c00;
-}
+        .cta-section {
+            background-color: #2e2e2e;
+            padding: 50px 20px;
+            color: #ffffff;
+            text-align: center;
+            border-top: 4px solid #ff4747; /* Voidpool HQ red accent */
+        }
 
-/* --- Navbar Styles --- */
-.navbar-brand {
-    color: #ff6a00 !important;
-    font-weight: 700;
-}
-.nav-link {
-    color: #e0e0e0 !important;
-}
-.bg-dark {
-    background-color: #1f1f1f !important; /* Darker than default */
-}
+        .cta-content {
+            max-width: 90%;
+            margin: 0 auto;
+        }
 
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #ff4747; /* Voidpool HQ red */
+        }
+
+        .feature-list {
+            text-align: left;
+            max-width: 800px;
+            margin: 30px auto;
+            list-style: none; /* Remove default list style */
+            padding: 0;
+        }
+
+        .feature-list li {
+            background-color: #1a1a1a;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-left: 5px solid #f1c40f; /* Yellow accent for list items */
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        .feature-list li i {
+            margin-right: 10px;
+            color: #ff4747; /* Red icon accent */
+        }
+
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            .btn-rustforge {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+            .cta-section {
+                padding: 30px 20px;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+            .feature-list li {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 1.8rem;
+            }
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            .btn-rustforge {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+                margin: 5px;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+            .feature-list li {
+                font-size: 0.9rem;
+            }
+        }
+
+        .footer {
+            background-color: #2b2b2b;
+            color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid #ff4747; /* Voidpool HQ red */
+        }
+        
+        .navbar .container-fluid {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Navbar adjustments */
+        .navbar-brand {
+            font-weight: 700;
+            color: #ffffff !important;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+
+        .nav-link {
+            color: #e0e0e0 !important;
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #ff4747 !important; /* Hover effect for nav links */
+        }
+
+        .bg-dark {
+            background-color: #212121 !important; /* Slightly darker than default bg-dark */
+        }
+
+        /* Specific style for login button to use primary brand color */
+        .btn-login-discord {
+            background-color: #5865F2 !important; /* Discord's brand blue */
+            border-color: #5865F2 !important;
+        }
+        .btn-login-discord:hover {
+            background-color: #4752C4 !important;
+            border-color: #4752C4 !important;
+        }
+        .btn-danger {
+            background-color: #dc3545 !important; /* Bootstrap's default red danger */
+            border-color: #dc3545 !important;
+        }
+        .btn-danger:hover {
+            background-color: #c82333 !important;
+            border-color: #bd2130 !important;
+        }
+
+        .highlight-text-red {
+            color: #ff4747; /* Voidpool HQ red */
+            font-weight: 500;
+        }
+        .highlight-text-yellow {
+            color: #f1c40f; /* Voidpool HQ yellow */
+            font-weight: 500;
+        }
+        .code-snippet {
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            color: #f1c40f; /* Yellow for code */
+        }
     </style>
 </head>
 
 <body class="homepage">
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 30px 15px;">
-        <div class="container">
+        <div class="container-fluid container">
             <a class="navbar-brand" href="/">
-                **Rustforge**
+                <img src="https://via.placeholder.com/50x50/ff4747/ffffff?text=RF" alt="RustForge Logo" style="width: 50px;">
+                RustForge
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
+                
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#features"><i class="fa-solid fa-flask"></i> Features</a>
+                        <a class="nav-link" href="#home"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="https://discord.gg/R4bR9JwAfv" target="_blank"><i class="fa-brands fa-discord"></i> Discord Support</a>
+                        <a class="nav-link" href="#features"><i class="fa-solid fa-wrench"></i> Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#premium"><i class="fa-solid fa-gem"></i> Premium</a>
+                        <a class="nav-link" href="#premium"><i class="fa-solid fa-star"></i> Premium</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#hotkeys"><i class="fa-solid fa-keyboard"></i> Hotkeys</a>
+                        <a class="nav-link" href="#how-to-use"><i class="fa-solid fa-book"></i> How to Use</a>
                     </li>
                     <li class="nav-item">
-                        <a class="btn btn-forge" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="margin: 0 0 0 15px; padding: 10px 20px; font-size: 1rem;">
-                            <i class="fa-solid fa-mug-saucer"></i> Support Dev
+                        <a class="nav-link" href="https://discord.gg/R4bR9JwAfv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-rustforge btn-sm text-white d-flex align-items-center justify-content-center" href="https://buymeacoffee.com/rustforgedev" target="_blank">
+                            <i class="fa-solid fa-mug-hot" style="margin-right: 8px;"></i>  
+                            <span>Support Dev</span>
                         </a>
                     </li>
                 </ul>
@@ -179,22 +305,18 @@ body {
         </div>
     </nav>
 
-    <section class="hero-section">
+    <section class="hero-section" id="home">
         <div class="hero-content">
-            <h1 class="hero-title">Rustforge: Paint Your Legacy</h1>
-            <p class="hero-subtitle">The Ultimate Utility for High-Fidelity Custom Sign Art in Rust</p>
-            <p>**Rustforge** takes any image, automatically converts it to the closest **Rust color palette**, and paints it directly onto a sign in-game. Get perfect, custom, high-quality art for your base in seconds.</p>
-            <ul style="list-style-type: none; padding: 0; margin: 20px 0;">
-                <li>🎨 **VoidWeave Algorithm** – Stunning, detailed, high-fidelity image painting.</li>
-                <li>🖼️ **Integrated Image Editor** – Crop, edit, and perfect your art in-app.</li>
-                <li>⏳ **Resume Painting** – Never lose progress due to a disconnect or crash (Premium).</li>
-                <li>⚙️ **Adaptive Palette** – Utilizes new hex color codes for richer tones.</li>
-            </ul>
-            <a class="btn btn-forge" href="https://discord.gg/R4bR9JwAfv" target="_blank">
-                <i class="fa-brands fa-discord"></i> Join Discord
+            <h1 class="hero-title">RustForge</h1>
+            <p class="hero-subtitle">Automated In-Game Sign Painter for Rust</p>
+            <p>RustForge takes any image, automatically converts it to the closest Rust color palette (or uses the new adaptive palette for up to 512 colors), and paints it directly onto a sign in-game.</p>
+            <p>It’s perfect for adding custom, high-quality art to your base without spending hours on it.</p>
+            
+            <a class="btn btn-rustforge" href="https://discord.gg/R4bR9JwAfv" target="_blank">
+                <i class="fa-brands fa-discord"></i> Join Discord for Support
             </a>
-            <a class="btn btn-forge" href="https://buymeacoffee.com/rustforgedev" target="_blank">
-                <i class="fa-solid fa-gem"></i> Get Premium
+            <a class="btn btn-rustforge" href="https://buymeacoffee.com/rustforgedev" target="_blank">
+                <i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee
             </a>
         </div>
     </section>
@@ -202,76 +324,125 @@ body {
     <section class="cta-section" id="premium">
         <div class="container">
             <div class="cta-content">
-                <h2 class="section-title"><i class="fa-solid fa-gem"></i> Premium Features</h2>
-                <p class="lead">Premium unlocks advanced functionality and directly supports ongoing development.</p>
-                <div class="row text-left mt-4">
-                    <div class="col-md-6 mb-3">
-                        <p>**VoidWeave Algorithm:** The most advanced painting method for high detail and color accuracy.</p>
-                        <p>**Resume Painting:** Press **F5** and click the canvas to resume from the exact row where you left off.</p>
-                        <p>**Session Save/Load:** Save your progress and load it later, even after rebooting the game.</p>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                        <p>**Adaptive Palette:** Access to the new Hex Color codes for more vibrant and accurate tones.</p>
-                        <p>**Integrated Image Editor:** Built-in cropping and text overlay tools.</p>
-                        <p>**Timelapse GIF Creator:** Automatically create a GIF of your painting process.</p>
-                    </div>
-                </div>
-                <a class="btn btn-forge" href="https://buymeacoffee.com/rustforgedev" target="_blank">
-                    <i class="fa-solid fa-shield-halved"></i> Learn More & Donate
+                <h2 class="section-title">Support Development & Get Premium Access</h2>
+                <p>Premium unlocks advanced features and helps fund ongoing development. Access is granted through BuyMeACoffee donations or by joining a BMAC membership tier (Membership tiers offer Early Access builds and more).</p>
+                
+                <h3 class="hero-subtitle mb-4">💎 How to get Premium:</h3>
+                <p>
+                    <i class="fa-solid fa-circle-check highlight-text-yellow mr-2"></i> Donate <span class="highlight-text-red">ANY amount</span> via <a href="https://buymeacoffee.com/rustforgedev" target="_blank" class="highlight-text-red" style="text-decoration: underline;">Buy Me a Coffee</a>
+                </p>
+                <p>
+                    <i class="fa-solid fa-circle-check highlight-text-yellow mr-2"></i> Join a <span class="highlight-text-red">BMAC membership tier</span> for Early Access builds and more.
+                </p>
+                
+                <h3 class="hero-subtitle mt-5 mb-3">✨ Premium Features</h3>
+                <ul class="feature-list">
+                    <li><i class="fa-solid fa-wand-magic-sparkles"></i> <span class="highlight-text-red">VoidWeave Algorithm</span> – The most advanced painting method for stunning, detailed, high-fidelity images. Scans the image, and blends pixels as it paints.</li>
+                    <li><i class="fa-solid fa-palette"></i> <span class="highlight-text-red">Adaptive Palette</span> – Uses new Hex Color codes and an Adaptive Palette system for more vibrant and accurate tones, including multiple skin tones, while optimizing performance.</li>
+                    <li><i class="fa-solid fa-hand-pointer"></i> <span class="highlight-text-red">Resume Painting on Click</span> – Press <span class="code-snippet">F5</span> and click a point on the canvas to resume from that row.</li>
+                    <li><i class="fa-solid fa-floppy-disk"></i> <span class="highlight-text-red">Session Save & Load</span> – Save and load your painting progress to resume later.</li>
+                    <li><i class="fa-solid fa-image"></i> <span class="highlight-text-red">Integrated Image Editor</span> – Crop and add text directly within RustForge, no external tools needed.</li>
+                    <li><i class="fa-solid fa-film"></i> <span class="highlight-text-red">Timelapse GIF Creator & Editor</span> – Automatically compile timelapse GIFs of your finished artwork.</li>
+                </ul>
+                
+                <a class="btn btn-rustforge mt-4" href="https://buymeacoffee.com/rustforgedev" target="_blank">
+                    <i class="fa-solid fa-crown"></i> Get Premium
                 </a>
             </div>
         </div>
     </section>
-    
-    <section class="cta-section" id="features" style="background-color: #1a1a1a; border-top: 2px solid #e65c00;">
+
+    <section class="cta-section" id="features" style="border-top: none;">
         <div class="container">
-            <h2 class="section-title"><i class="fa-solid fa-cog"></i> Core Features</h2>
-            <div class="row text-left mt-4">
-                <div class="col-md-6 mb-4">
-                    **Quality & Performance**
-                    <ul>
-                        <li>**Background Color Ignore:** Skip painting solid background colors to save time.</li>
-                        <li>**CIEDE2000 Color Space:** Choose the most perceptually accurate color matching method.</li>
-                        <li>**Transparency Threshold:** Skip pixels based on their alpha transparency.</li>
-                        <li>**Multiple Painting Methods:** Scanline, Crayon Eater, and VoidWeave (Premium).</li>
-                    </ul>
-                </div>
-                <div class="col-md-6 mb-4">
-                    **Utility & Experience**
-                    <ul>
-                        <li>**Load Recent Files:** Quickly access the last 10 images you used.</li>
-                        <li>**Real-time Notifications:** Toast notifications for session status (Start/Pause/Stop).</li>
-                        <li>**Integrated Image Filters:** Apply Comic, Oil Paint, Pixel Art, Sepia, and more.</li>
-                        <li>**Configurable Hotkeys:** Customize Start, Pause, Stop, and Region Capture actions.</li>
-                    </ul>
-                </div>
-            </div>
+            <h2 class="section-title">Key Features</h2>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-folder-open"></i> <span class="highlight-text-yellow">Load Recent Files</span>: Quickly access the last 10 used images from a new menu.</li>
+                <li><i class="fa-solid fa-bell"></i> <span class="highlight-text-yellow">Real-time Notifications</span>: Toast notifications for paint session status (start, pause, stop).</li>
+                <li><i class="fa-solid fa-ban"></i> <span class="highlight-text-yellow">Background Color Ignore</span>: Skip specific colors during painting (e.g., white borders) to save time.</li>
+                <li><i class="fa-solid fa-sliders"></i> <span class="highlight-text-yellow">Customizable Color Tolerance</span>: Fine-tune how strictly background colors are ignored.</li>
+                <li><i class="fa-solid fa-swatchbook"></i> <span class="highlight-text-yellow">Color Space Selection</span>: Choose between Euclidean RGB or CIEDE2000 for color matching.</li>
+                <li><i class="fa-solid fa-eye-dropper"></i> <span class="highlight-text-yellow">Transparency Threshold Setting</span>: Define a threshold for alpha transparency to skip highly transparent pixels.</li>
+                <li><i class="fa-brands fa-discord"></i> <span class="highlight-text-yellow">Discord Rich Presence</span>: Display your painting status in your Discord profile.</li>
+                <li><i class="fa-solid fa-camera-retro"></i> <span class="highlight-text-yellow">Screenshot on Finish Toggle</span>: Automatically capture a screenshot of your finished painting.</li>
+                <li><i class="fa-solid fa-rocket"></i> <span class="highlight-text-yellow">Dedicated Splash Screen</span>: Smoother startup experience with an elegant loading process.</li>
+                <li><i class="fa-solid fa-bug"></i> <span class="highlight-text-yellow">Advanced Error Logging & Support Integration</span>: Enhanced logging to <span class="code-snippet">RF_Logs.txt</span> and quick access to Discord support.</li>
+                <li><i class="fa-solid fa-clock"></i> <span class="highlight-text-yellow">Mouse Click Delay Setting</span>: Control delay for automated mouse movements for reliability.</li>
+            </ul>
+
+            <h3 class="hero-subtitle mt-5 mb-3">🎨 Multiple Painting Methods</h3>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-brush"></i> <span class="highlight-text-red">VoidWeave Algorithm</span> (Premium): Default, most advanced, high-fidelity for complex images.</li>
+                <li><i class="fa-solid fa-arrow-right"></i> <span class="highlight-text-yellow">Scanline</span>: Methodical, line-by-line painting.</li>
+                <li><i class="fa-solid fa-paint-roller"></i> <span class="highlight-text-yellow">Crayon Eater</span>: Distinct painting style with character.</li>
+            </ul>
+
+            <h3 class="hero-subtitle mt-5 mb-3">🖼️ Image Filters</h3>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-xmark"></i> <span class="highlight-text-yellow">None</span>: Original image.</li>
+                <li><i class="fa-solid fa-book-open"></i> <span class="highlight-text-yellow">Comic Filter</span>: Cartoon-like appearance.</li>
+                <li><i class="fa-solid fa-brush"></i> <span class="highlight-text-yellow">Oil Paint</span>: Painterly effect.</li>
+                <li><i class="fa-solid fa-braille"></i> <span class="highlight-text-yellow">Pixel Art / Mosaic</span>: Simplified pixelated look.</li>
+                <li><i class="fa-solid fa-pencil"></i> <span class="highlight-text-yellow">Charcoal Sketch</span>: Black and white sketch.</li>
+                <li><i class="fa-solid fa-certificate"></i> <span class="highlight-text-yellow">Dithering</span>: Reduces colors, creates illusion of more.</li>
+                <li><i class="fa-solid fa-image-portrait"></i> <span class="highlight-text-yellow">Sepia Tone</span>: Antique, vintage look.</li>
+                <li><i class="fa-solid fa-cube"></i> <span class="highlight-text-yellow">Emboss</span>: Raised, 3D effect.</li>
+                <li><i class="fa-solid fa-paint-brush"></i> <span class="highlight-text-yellow">Watercolor</span>: Smooth, painterly effect.</li>
+                <li><i class="fa-solid fa-pen-nib"></i> <span class="highlight-text-yellow">Line Art</span>: High-contrast sketch, preserving/generating lines. (Perfect to color in images yourself!)</li>
+                <li><i class="fa-solid fa-yin-yang"></i> <span class="highlight-text-yellow">Grayscale</span>: Removes all color.</li>
+            </ul>
             
-            <h3 class="section-title mt-5" id="hotkeys"><i class="fa-solid fa-wrench"></i> Default Hotkeys</h3>
-            <table class="table table-dark table-striped text-white" style="max-width: 600px; margin: 0 auto; border: 1px solid #ff6a00;">
-                <thead style="background-color: #ff6a00; color: black;">
-                    <tr>
-                        <th scope="col">Action</th>
-                        <th scope="col">Default Hotkey</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Start/Pause Painting</td><td>**F11**</td></tr>
-                    <tr><td>Stop Painting</td><td>**Escape**</td></tr>
-                    <tr><td>Resume On Click (Premium)</td><td>**F5**</td></tr>
-                    <tr><td>Canvas Overlay Toggle</td><td>**F9**</td></tr>
-                    <tr><td>Palette Overlay Toggle</td><td>**F10**</td></tr>
-                </tbody>
-            </table>
+            <h3 class="hero-subtitle mt-5 mb-3">✨ Smoothing & Sharpening Filters</h3>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-xmark"></i> <span class="highlight-text-yellow">None</span>: No smoothing or sharpening.</li>
+                <li><i class="fa-solid fa-droplet"></i> <span class="highlight-text-yellow">Gaussian</span> (3x3, 5x5, 7x7): Blurs image to reduce noise and detail.</li>
+                <li><i class="fa-solid fa-grip"></i> <span class="highlight-text-yellow">Median</span> (3x3, 5x5, 7x7, 9x9): Removes "salt and pepper" noise while preserving edges.</li>
+                <li><i class="fa-solid fa-calculator"></i> <span class="highlight-text-yellow">Mean</span> (3x3, 5x5): Simple averaging filter to smooth image.</li>
+                <li><i class="fa-solid fa-wave-square"></i> <span class="highlight-text-yellow">LowPass</span> (3x3, 5x5): Smooths image by reducing high-frequency details.</li>
+                <li><i class="fa-solid fa-scissors"></i> <span class="highlight-text-yellow">Sharpen</span> (3x3): Enhances image edges for a sharper look.</li>
+            </ul>
+
+            <h3 class="hero-subtitle mt-5 mb-3">🛠️ Utilities</h3>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-keyboard"></i> <span class="highlight-text-yellow">Configurable Hotkeys</span>: Customize hotkeys for start, pause, stop.</li>
+                <li><i class="fa-solid fa-hourglass-half"></i> <span class="highlight-text-yellow">Accurate Painting Time Estimation</span>: Dedicated form for estimated painting time.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="cta-section" id="how-to-use" style="border-top: none;">
+        <div class="container">
+            <h2 class="section-title">How to Use RustForge</h2>
+            <ul class="feature-list">
+                <li><i class="fa-solid fa-file-image"></i> <span class="highlight-text-yellow">Load an Image</span>: Use the main RustForge window to load your desired image by clicking "Load Image...".</li>
+                <li><i class="fa-solid fa-crosshairs"></i> <span class="highlight-text-yellow">Capture Your Regions</span>: (Press <span class="code-snippet">Enter</span> after setting Canvas/Palette areas to save)
+                    <ul>
+                        <li><i class="fa-solid fa-paint-brush"></i> <span class="highlight-text-red">Palette</span>: Use hotkey (<span class="code-snippet">F10</span> default) to draw a box around the in-game color palette. (ONLY CAPTURE THE COLOR PALETTE AREA)</li>
+                        <li><i class="fa-solid fa-vector-square"></i> <span class="highlight-text-red">Canvas</span>: Use hotkey (<span class="code-snippet">F9</span> default) to draw a box around the in-game canvas where painting will occur.</li>
+                    </ul>
+                </li>
+                <li><i class="fa-solid fa-gear"></i> <span class="highlight-text-yellow">Configure Settings</span>: In the settings window, select your preferred paint method, apply filters, and adjust paint speed.</li>
+                <li><i class="fa-solid fa-play"></i> <span class="highlight-text-yellow">Start Painting</span>: Once processed and regions defined, press the "Start" hotkey (<span class="code-snippet">F11</span> default) to begin.</li>
+                <li><i class="fa-solid fa-pause"></i><i class="fa-solid fa-stop"></i> <span class="highlight-text-yellow">Pause and Stop</span>: Use assigned hotkeys (<span class="code-snippet">F11</span> for pause, <span class="code-snippet">Escape</span> for stop) to control painting.</li>
+            </ul>
+
+            <h3 class="hero-subtitle mt-5 mb-3">⌨️ Default Hotkeys</h3>
+            <ul class="feature-list">
+                <li><span class="code-snippet">F9</span>: <span class="highlight-text-red">Canvas Overlay Toggle</span> - Toggles the canvas selection overlay.</li>
+                <li><span class="code-snippet">F10</span>: <span class="highlight-text-red">Palette Overlay Toggle</span> - Toggles the palette selection overlay.</li>
+                <li><span class="code-snippet">F11</span>: <span class="highlight-text-red">Start/Pause</span> - Starts or pauses the painting process.</li>
+                <li><span class="code-snippet">Escape</span>: <span class="highlight-text-red">Stop</span> - Immediately stops the painting process.</li>
+                <li><span class="code-snippet">F5</span>: <span class="highlight-text-red">Resume On Click</span> - Click a point on the canvas to resume from that row.</li>
+            </ul>
+            <p class="text-center mt-3">Hotkeys are configurable in the settings window.</p>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 Rustforge Development. All rights reserved.</p>
+            <p>&copy; 2024 RustForge. All rights reserved.</p>
             <p class="mb-0">
-                <a href="https://buymeacoffee.com/rustforgedev" class="text-light" style="text-decoration: none;">Support</a> |
-                <a href="https://discord.gg/R4bR9JwAfv" class="text-light" style="text-decoration: none;">Discord</a>
+                <a href="https://discord.gg/R4bR9JwAfv" class="text-light" style="text-decoration: none;">Discord Support</a> |
+                <a href="https://buymeacoffee.com/rustforgedev" class="text-light" style="text-decoration: none;">Support Development</a>
             </p>
         </div>
     </footer>

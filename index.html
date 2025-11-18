@@ -173,58 +173,50 @@
     max-width: 1200px; 
     margin: 30px auto;
 }
-.feature-card-icon-img {
-    width: 40px; /* Adjust size as needed */
-    height: 40px;
-    font-size: 40px; /* Use font size to make the emoji larger */
-    line-height: 1; /* Keep it compact */
-    text-align: center;
-    margin: 0 auto 10px auto; /* Center it and add space below */
-    color: var(--botpulse-red); /* Keep the icon color consistent */
-}
-/* Feature Card Styling (Replaces .feature-list li) */
-.feature-card {
-    background-color: #2b2b2b;
-    /* Removed margin-bottom here as we'll use a better spacing method */
-    padding: 20px; /* Slightly more padding inside the card */
-    border-left: 5px solid var(--highlight-yellow);
-    border-radius: 5px;
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    font-size: 1.1rem;
-    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
-    /* Add bottom margin to space cards vertically on mobile/tablet */
-    margin-bottom: 20px;
-    align-items: center; /* Center content horizontally */
-    text-align: center;
-}
+.features-section {
+            background-color: #202020;
+            padding: 60px 0;
+        }
 
-.feature-card:hover {
-    transform: translateY(-5px); /* Lift the card slightly */
-    background-color: #383838; /* Darker background on hover */
-    box-shadow: 0 8px 15px rgba(183, 19, 73, 0.4); /* Shadow using botpulse-red */
-    cursor: pointer;
-}
+        .features-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #fff;
+            text-align: center;
+        }
 
-.feature-card i {
-    color: var(--botpulse-red);
-}
+        .feature-card {
+            background-color: #141414;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
 
-.feature-card-title {
-    font-weight: 500;
-    margin-bottom: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
 
-/* --- Added CSS to fix feature card icon spacing/alignment --- */
-.feature-card-title i {
-    margin-right: 8px; /* Add spacing between the icon and text when they are side-by-side */
-    font-size: 1.2rem; /* Reduce the size of the icon when it's inside the title for better inline look */
-    margin-bottom: 0; /* Remove the bottom margin when it's inline */
-}
+        .feature-card h5 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #aaa;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #b71349;
+            margin-bottom: 10px;
+        }
+
 /* --- End Added CSS --- */
 
         /* Footer Styling */

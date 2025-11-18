@@ -2,202 +2,714 @@
 <html lang="en">
 
 <head>
-      <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BotPulse | Monitor Your Discord Bots in Real-Time with Confidence</title>
+    <title>RustForge | Automated In-Game Sign Painter for Rust</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-    <meta name="description" content="Monitor your Discord bots in real-time with BotPulse. Get instant alerts on bot downtime, crashes, and more to keep your community running smoothly.">
-    <meta property="og:title" content="BotPulse | Monitor Your Discord Bots in Real-Time with Confidence" />
-    <meta property="og:url" content="https://botpulse.us" />
-    <meta property="og:type" content="website" />
-    <meta property="og:description" content="Monitor your Discord bots in real-time with BotPulse. Get instant alerts on bot downtime, crashes, and more to keep your community running smoothly." />
-    <meta property="og:image" content="/img/BotPulsePreview.png" />
-    <meta property="og:image:alt" content="BotPulse Logo" />
-    <link rel="icon" type="image/png" href="/img/BotPulse.png" />
-
+    
+    <meta name="description" content="RustForge automatically converts images to the Rust color palette and paints them onto in-game signs with precision. Supports adaptive palette, resume painting, and an integrated editor.">
+    <meta property="og:title" content="RustForge | Automated In-Game Sign Painter for Rust" />
+    <meta property="og:url" content="https://v0idpool.github.io/" /> <meta property="og:type" content="website" />
+    <meta property="og:description" content="RustForge automatically converts images to the Rust color palette and paints them onto in-game signs with precision. Supports adaptive palette, resume painting, and an integrated editor." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png" /> <meta property="og:image:alt" content="RustForge Software Preview" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RFIcon.png" /> 
+    
     <style>
-.card-hover:hover {
-    transform: translateY(-10px);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
+        /* BotPulse Color Palette and Base */
+        :root {
+            --botpulse-red: #b71349;
+            --botpulse-red-dark: #8b2946;
+            --dark-bg: #1a1a1a;
+            --dark-section: #212121; /* Slightly lighter dark for contrast */
+            --text-color: #ffffff;
+            --highlight-yellow: #f1c40f; /* Retaining RustForge yellow highlight */
+        }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+        }
+
+        /* Navbar Styling */
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-color) !important;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+        .navbar-nav {
+        /* Align all nav items vertically to the center */
+        align-items: center;
+        }
+        
+        .nav-link {
+            color: #e0e0e0 !important;
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: var(--botpulse-red) !important; /* Change to white on hover */
+        }
+        .bg-dark {
+            background-color: var(--dark-section) !important;
+            padding: 30px 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Hero Section Styling (Adapted from BotPulse) */
+        .hero-section {
+            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png'); /* RustForge Image */
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
+            min-height: 55vh; /* Adjusted for BotPulse look */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3rem; /* Larger title */
+            font-weight: 700;
+            color: var(--botpulse-red); 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem; /* Larger subtitle */
+            font-weight: 400;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+        .hero-feature-list {
+            list-style-type: none; /* This removes the bullet points */
+            padding-left: 0; /* This removes the default left padding browsers apply to <ul> */
+            margin-bottom: 1.5rem; /* Optional: adds space below the list, matching other elements */
+        }
+
+        /* Optional: Center the list on smaller screens if you want, assuming it takes up the full width of its container. */
+        @media (max-width: 767px) {
+        .hero-feature-list li {
+        text-align: left; /* Ensure text remains readable if centered */
+        display: block;
+        }
+    }
+        /* Primary Button (Adapted from BotPulse btn-primary1) */
+        .btn-rustforge, .btn-primary1-pulse {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 25px;
+            background-color: #cc3017;
+            color: var(--text-color);
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            margin: 10px;
+        }
+
+        .btn-rustforge i, .btn-primary1-pulse i {
+            margin-right: 8px;
+        }
+
+        .btn-rustforge:hover, .btn-primary1-pulse:hover {
+            transform: scale(1.05);
+            background-color: #912200;
+            box-shadow: 0px 5px 25px rgb(255 0 0 / 55%);
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .btn-rustforge:active, .btn-primary1-pulse:active {
+            transform: scale(0.95);
+            box-shadow: none;
+        }
+
+        /* CTA/Section Styling (Adapted from BotPulse) */
+        .cta-section {
+            background-color: var(--dark-bg);
+            padding: 50px 0;
+            color: var(--text-color);
+            text-align: center;
+            border-top: 3px solid var(--botpulse-red-dark);
+        }
+
+        .cta-content {
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem; /* BotPulse size */
+            font-weight: 700;
+            margin-bottom: 2rem; /* BotPulse spacing */
+            color: var(--botpulse-red);
+        }
+
+.feature-grid-container {
+    max-width: 1200px; 
+    margin: 30px auto;
 }
-
-.hero-section {
-    background-image: url('/img/BotpulseBG.png');
-    background-size: cover;
-    background-position: center;
-    color: #ffffff;
-    height: 55vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.feature-card-icon-img {
+    width: 40px; /* Adjust size as needed */
+    height: 40px;
+    font-size: 40px; /* Use font size to make the emoji larger */
+    line-height: 1; /* Keep it compact */
+    text-align: center;
+    margin: 0 auto 10px auto; /* Center it and add space below */
+    color: var(--botpulse-red); /* Keep the icon color consistent */
 }
-
-.hero-content {
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 30px;
-    border-radius: 15px;
-    max-width: 1000px;
-}
-
-.hero-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: #d40045; /* Slightly darker red for better contrast */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a subtle shadow for contrast */
-}
-
-
-.hero-subtitle {
-    font-size: 1.5rem;
-    font-weight: 400;
-    color: #ffffff; /* Neutral white for subtitle */
-}
-
-.btn-primary1 {
-    background-color: #b71349; /* BotPulse red */
-    border-color: #b71349;
-    font-size: 1.2rem;
-    color: #ffffff;
-}
-
-.btn-primary1:hover {
-    background-color: #8b2946; /* Slightly darker red on hover */
-    border-color: #8b2946;
-}
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    color: #b71349; /* BotPulse red */
-}
-
-.cta-section {
-    background-color: #1a1a1a; /* Dark neutral background */
-    padding: 50px 0;
-    color: #ffffff;
-    text-align: center;
-    border-top: 3px solid #8b2946; /* Darker red accent */
-}
-
-.cta-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.footer {
-    bottom: auto;
+/* Feature Card Styling (Replaces .feature-list li) */
+.feature-card {
     background-color: #2b2b2b;
-    color: #e0e0e0;
-    padding: 20px;
-    text-align: center;
-    border-top: 2px solid #b71349;
+    /* Removed margin-bottom here as we'll use a better spacing method */
+    padding: 20px; /* Slightly more padding inside the card */
+    border-left: 5px solid var(--highlight-yellow);
+    border-radius: 5px;
+    height: 100%; 
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    /* Add bottom margin to space cards vertically on mobile/tablet */
+    margin-bottom: 20px;
+    align-items: center; /* Center content horizontally */
+    text-align: center;
 }
+
+.feature-card:hover {
+    transform: translateY(-5px); /* Lift the card slightly */
+    background-color: #383838; /* Darker background on hover */
+    box-shadow: 0 8px 15px rgba(183, 19, 73, 0.4); /* Shadow using botpulse-red */
+    cursor: pointer;
+}
+
+.feature-card i {
+    color: var(--botpulse-red);
+}
+
+.feature-card-title {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* --- Added CSS to fix feature card icon spacing/alignment --- */
+.feature-card-title i {
+    margin-right: 8px; /* Add spacing between the icon and text when they are side-by-side */
+    font-size: 1.2rem; /* Reduce the size of the icon when it's inside the title for better inline look */
+    margin-bottom: 0; /* Remove the bottom margin when it's inline */
+}
+/* --- End Added CSS --- */
+
+        /* Footer Styling */
+        .footer {
+            background-color: #2b2b2b;
+            color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid var(--botpulse-red);
+        }
+        
+        /* Highlight Text Colors (Updated to BotPulse red) */
+        .highlight-text-red {
+            color: var(--botpulse-red);
+            font-weight: 500;
+        }
+        .highlight-text-yellow {
+            color: var(--highlight-yellow);
+            font-weight: 500;
+        }
+        .code-snippet {
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--highlight-yellow); 
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .btn-rustforge, .btn-primary1-pulse { font-size: 1rem; padding: 8px 15px; }
+            .section-title { font-size: 2rem; }
+            .feature-list li { font-size: 1rem; padding: 10px; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title { font-size: 2rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .btn-rustforge, .btn-primary1-pulse { font-size: 0.9rem; padding: 6px 12px; margin: 5px; }
+            .section-title { font-size: 1.8rem; }
+            .feature-list li { font-size: 0.9rem; }
+        }
+        
+        .code-snippet {
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--botpulse-red); 
+        }
+
+      
+        }
     </style>
 </head>
 
 <body class="homepage">
 
-<!-- Highlighted Section for Promos, Messages, Links -->
-<div class="highlighted-links">
-   Website is currently under construction. All features currently work. Updating server status page functionality.
-</div>
-     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding: 30px 15px;">
-        <div class="container-fluid">
+  <div style="background-color: var(--botpulse-red); color: white; text-align: center; padding: 8px;">
+        Website Under Construction
+    </div>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid container">
             <a class="navbar-brand" href="/">
-                <img src="/img/BotPulse.png" alt="Logo" style="width: 50px;">
-                BotPulse
+                <img src="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RFIcon.png" alt="RustForge Logo" style="width: 50px;">
+                RustForge
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-				
+                
             <div class="collapse navbar-collapse" id="navbarNav">
-		
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home</a>
+                        <a class="nav-link" href="#home"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                         <a class="nav-link" href="/premium"><i class="fa-solid fa-heart-pulse"></i> Premium</a>
+                        <a class="nav-link" href="#features"><i class="fa-solid fa-wrench"></i> Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/invite" target="_blank"><i class="fa-solid fa-handshake-angle"></i> Support</a>
+                        <a class="nav-link" href="#premium"><i class="fa-solid fa-star"></i> Premium</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/docs"><i class="fa-solid fa-book"></i> Docs</a>
+                        <a class="nav-link" href="#how-to-use"><i class="fa-solid fa-book"></i> How to Use</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/about"><i class="fa-solid fa-robot"></i> About</a>
+                        <a class="nav-link" href="https://discord.gg/R4bR9JwAfv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
                     </li>
-					
-                    <% if (user) { %>
-                        <li class="nav-item">
-                            <a class="nav-link btn btn-danger btn-sm nav-link text-white" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
-                        </li>
-                    <% } else { %>
-                        <li class="nav-item">
-    <a class="nav-link btn btn-primary btn-sm text-white d-flex align-items-center justify-content-center" href="/auth/login">
-        <i class="fa-brands fa-discord" style="margin-right: 8px;"></i> 
-        <span>Login</span>
-    </a>
-</li>
-                    <% } %>
-				
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="btn btn-primary1-pulse" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="margin-left: 15px;">
+                            <i class="fa-solid fa-mug-hot" style="margin-right: 8px;"></i>  
+                            <span>Support Dev</span>
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-   <!-- Hero Section -->
-    <section class="hero-section">
+   <section class="hero-section" id="home">
         <div class="hero-content">
-            <h1 class="hero-title">BotPulse</h1>
-            <p class="hero-subtitle">Monitor Your Discord Bots in Real-Time with Confidence</p>
-            <p>Stay informed with instant alerts on bot downtime, crashes, and performance issues. Ensure your server never misses a beat.</p>
-            <ul style="list-style-type: none;display: grid;padding: 0;margin: 20px 0;justify-content: center;">
-                <li style="justify-content: left; display: grid;">⚡ Real-Time Bot Monitoring</li>
-                <li style="justify-content: left; display: grid;">📊 Server Status Pages</li>
-                <li style="justify-content: left; display: grid;">🔔 Instant Alerts for Downtime</li>
-                <li style="justify-content: left; display: grid;">And more being added periodically!</li>
-               
+            <h1 class="hero-title">RustForge</h1>
+            <p class="hero-subtitle">Automated In-Game Sign Painter for Rust</p>
+            <p>RustForge takes any image, automatically converts it to the closest Rust color palette (or uses the new adaptive palette for up to 512 colors), and paints it directly onto a sign in-game.</p>
+            <p>It’s perfect for adding custom, high-quality art to your base without spending hours on it.</p>
+            
+            <ul class="hero-feature-list">
+                <li><i class="fa-solid fa-paintbrush" style="margin-right: 10px; color: var(--botpulse-red);"></i> Automated In-Game Painting</li>
+                <li><i class="fa-solid fa-palette" style="margin-right: 10px; color: var(--botpulse-red);"></i> Adaptive Color Palette Support</li>
+                <li><i class="fa-solid fa-image" style="margin-right: 10px; color: var(--botpulse-red);"></i> Integrated Image Editor (Premium)</li>
             </ul>
-            <a class="btn btn-primary1 text-white" href="/about">About BotPulse</a>
-            <a class="btn btn-primary1 text-white" href="https://discord.com/oauth2/authorize?client_id=1315046380393336924" target="_blank">Add BotPulse</a>
+
+            <a class="btn btn-primary1-pulse" href="https://discord.gg/R4bR9JwAfv" target="_blank">
+                <i class="fa-brands fa-discord"></i> Join Discord for Support
+            </a>
+            <a class="btn btn-primary1-pulse" href="https://buymeacoffee.com/rustforgedev" target="_blank">
+                <i class="fa-solid fa-mug-hot"></i> Buy Me a Coffee
+            </a>
         </div>
     </section>
 
-   <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
+    <section class="cta-section" id="premium">
+       <div class="container feature-grid-container">
             <div class="cta-content">
-                <h2 class="section-title">Why Choose BotPulse?</h2>
-                <p>BotPulse provides the tools you need to monitor your bots effectively, ensuring seamless operation and minimal downtime.</p>
-                <a class="btn btn-primary1 text-white" href="/about">Learn More</a>
+                <h2 class="section-title">Support Development & Get Premium Access</h2>
+                <p>Premium unlocks advanced features and helps fund ongoing development. Access is granted through BuyMeACoffee donations or by joining a BMAC membership tier (Membership tiers offer Early Access builds and more).</p>
+                
+                <h3 class="hero-subtitle mb-4" style="color: var(--text-color);">💎 How to get Premium:</h3>
+                <p>
+                    <i class="fa-solid fa-circle-check highlight-text-red mr-2"></i> Donate <span class="highlight-text-red">ANY amount</span> via <a href="https://buymeacoffee.com/rustforgedev" target="_blank" class="highlight-text-red" style="text-decoration: underline;">Buy Me a Coffee</a>
+                </p>
+                <p>
+                    <i class="fa-solid fa-circle-check highlight-text-red mr-2"></i> Join a <span class="highlight-text-red">BMAC membership tier</span> for Early Access builds and more.
+                </p>
+                
+                <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">✨ Premium Features</h3>
+                <div class="row mt-4">
+                    <div class="col-lg-4 col-md-6 mb-4 mb-4">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> 
+                            <div class="feature-card-title">
+                                
+                                <span class="highlight-text-red">VoidWeave Algorithm</span>
+                            </div>
+                            <p class="mb-0">The most advanced painting method for stunning, detailed, high-fidelity images. Scans the image, and blends pixels as it paints.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-palette"></i> 
+                            <div class="feature-card-title">
+                                
+                                <span class="highlight-text-red">Adaptive Palette</span>
+                            </div>
+                            <p class="mb-0">Uses new Hex Color codes and an Adaptive Palette system for more vibrant and accurate tones, including multiple skin tones, while optimizing performance.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-hand-pointer"></i> 
+                            <div class="feature-card-title">
+                                
+                                <span class="highlight-text-red">Resume Painting on Click</span>
+                            </div>
+                            <p class="mb-0">Press <span class="code-snippet">F5</span> and click a point on the canvas to resume from that row.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-floppy-disk"></i> 
+                            <div class="feature-card-title">
+                                
+                                <span class="highlight-text-red">Session Save & Load</span>
+                            </div>
+                            <p class="mb-0">Save and load your painting progress to resume later.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-image"></i> 
+                            <div class="feature-card-title">
+                                
+                                <span class="highlight-text-red">Integrated Image Editor</span>
+                            </div>
+                            <p class="mb-0">Crop and add text directly within RustForge, no external tools needed.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="feature-card">
+                            <i class="fa-solid fa-film"></i> 
+                            <div class="feature-card-title">
+                                
+                                <span class="highlight-text-red">Timelapse GIF Creator & Editor</span>
+                            </div>
+                            <p class="mb-0">Automatically compile timelapse GIFs of your finished artwork.</p>
+                        </div>
+                    </div>
+                </div>
+                <a class="btn btn-primary1-pulse mt-4" href="https://buymeacoffee.com/rustforgedev" target="_blank">
+                    <i class="fa-solid fa-crown"></i> Get Premium
+                </a>
             </div>
         </div>
     </section>
 
+    <section class="cta-section" id="features">
+       <div class="container feature-grid-container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="row mt-4">
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-folder-open"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Load Recent Files</span>
+                        </div>
+                        <p class="mb-0">Quickly access the last 10 used images from a new menu.</p>
+                    </div>
+                </div>
 
-    <!-- Footer -->
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-ban"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Background Color Ignore</span>
+                        </div>
+                        <p class="mb-0">Skip specific colors during painting (e.g., white borders) to save time.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-sliders"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Customizable Color Tolerance</span>
+                        </div>
+                        <p class="mb-0">Fine-tune how strictly background colors are ignored.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-swatchbook"></i>
+                        <div class="feature-card-title">
+                             
+                            <span class="highlight-text-red">Color Space Selection</span>
+                        </div>
+                        <p class="mb-0">Choose between Euclidean RGB or CIEDE2000 for color matching.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-eye-dropper"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Transparency Threshold Setting</span>
+                        </div>
+                        <p class="mb-0">Define a threshold for alpha transparency to skip highly transparent pixels.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-brands fa-discord"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Discord Rich Presence</span>
+                        </div>
+                        <p class="mb-0">Display your painting status in your Discord profile.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-camera-retro"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Screenshot on Finish Toggle</span>
+                        </div>
+                        <p class="mb-0">Automatically capture a screenshot of your finished painting.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-rocket"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Dedicated Splash Screen</span>
+                        </div>
+                        <p class="mb-0">Smoother startup experience with an elegant loading process.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-bug"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Advanced Error Logging & Support Integration</span>
+                        </div>
+                        <p class="mb-0">Enhanced logging to <span class="code-snippet">RF_Logs.txt</span> and quick access to Discord support.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-clock"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Mouse Click Delay Setting</span>
+                        </div>
+                        <p class="mb-0">Control delay for automated mouse movements for reliability.</p>
+                    </div>
+                </div>
+
+            </div>
+            
+            <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">🎨 Multiple Painting Methods</h3>
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-brush"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">VoidWeave Algorithm</span> 
+                            <small>(Premium)</small>
+                        </div>
+                        <p class="mb-0">Default, most advanced, high-fidelity for complex images. Scans the image, and blends pixels as it paints.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-arrow-right"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Scanline</span>
+                        </div>
+                        <p class="mb-0">Methodical, line-by-line painting.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-paint-roller"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Crayon Eater</span>
+                        </div>
+                        <p class="mb-0">Distinct painting style with character.</p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <section class="cta-section" id="how-to-use">
+       <div class="container feature-grid-container">
+            <h2 class="section-title">How to Use RustForge</h2>
+            
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-file-image"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Load an Image</span>
+                        </div>
+                        <p class="mb-0">Use the main RustForge window to load your desired image by clicking "Load Image...".</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-crosshairs"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Capture Your Regions</span>
+                            <small class="ml-2">(Press <span class="code-snippet">Enter</span> after setting Canvas/Palette areas to save)</small>
+                        </div>
+                        <p class="mb-1"><i class="fa-solid fa-paint-brush"></i> <span class="highlight-text-red">Palette</span>: Use hotkey (<span class="code-snippet">F10</span> default) to draw a box around the in-game color palette. (ONLY CAPTURE THE COLOR PALETTE AREA)</p>
+                        <p class="mb-0"><i class="fa-solid fa-vector-square"></i> <span class="highlight-text-red">Canvas</span>: Use hotkey (<span class="code-snippet">F9</span> default) to draw a box around the in-game canvas where painting will occur.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-gear"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Configure Settings</span>
+                        </div>
+                        <p class="mb-0">In the settings window, select your preferred paint method, apply filters, and adjust paint speed.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-play"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Start Painting</span>
+                        </div>
+                        <p class="mb-0">Once processed and regions defined, press the "Start" hotkey (<span class="code-snippet">F11</span> default) to begin.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-pause"></i><i class="fa-solid fa-stop ml-1"></i> 
+                        <div class="feature-card-title">
+                            
+                            <span class="highlight-text-red">Pause and Stop</span>
+                        </div>
+                        <p class="mb-0">Use assigned hotkeys (<span class="code-snippet">F11</span> for pause, <span class="code-snippet">Escape</span> for stop) to control painting.</p>
+                    </div>
+                </div>
+            </div>
+            <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">⌨️ Default Hotkeys</h3>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">F9</span>: <span class="highlight-text-red">Canvas Overlay Toggle</span>
+                        </div>
+                        <p class="mb-0">Toggles the canvas selection overlay.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">F10</span>: <span class="highlight-text-red">Palette Overlay Toggle</span>
+                        </div>
+                        <p class="mb-0">Toggles the palette selection overlay.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">F11</span>: <span class="highlight-text-red">Start/Pause</span>
+                        </div>
+                        <p class="mb-0">Starts or pauses the painting process.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">Escape</span>: <span class="highlight-text-red">Stop</span>
+                        </div>
+                        <p class="mb-0">Immediately stops the painting process.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-card-title">
+                            <span class="code-snippet">F5</span>: <span class="highlight-text-red">Resume On Click</span>
+                        </div>
+                        <p class="mb-0">Click a point on the canvas to resume from that row.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-3">Hotkeys are configurable in the settings window.</p>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2024 BotPulse. All rights reserved.</p>
+            <p>&copy; 2024 RustForge. All rights reserved.</p>
             <p class="mb-0">
-                <a href="/privacy" class="text-light" style="text-decoration: none;">Privacy Policy</a> |
-                <a href="/tos" class="text-light" style="text-decoration: none;">Terms Of Service</a>
+                <a href="https://discord.gg/R4bR9JwAfv" class="text-light" style="text-decoration: none;">Discord Support</a> |
+                <a href="https://buymeacoffee.com/rustforgedev" class="text-light" style="text-decoration: none;">Support Development</a>
             </p>
         </div>
     </footer>
-	
-</body>
-    <!-- Bootstrap JS, Popper.js, and jQuery -->
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RustForge | Automated In-Game Sign Painter for Rust</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style/style.css">
+    <meta name="description" content="RustForge automatically converts images to the Rust color palette and paints them onto in-game signs with precision. Supports adaptive palette, resume painting, and an integrated editor.">
+    <meta property="og:title" content="RustForge | Automated In-Game Sign Painter for Rust" />
+    <meta property="og:url" content="https://v0idpool.github.io/" /> <meta property="og:type" content="website" />
+    <meta property="og:description" content="RustForge automatically converts images to the Rust color palette and paints them onto in-game signs with precision. Supports adaptive palette, resume painting, and an integrated editor." />
+    <meta property="og:image" content="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png" /> <meta property="og:image:alt" content="RustForge Software Preview" />
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RFIcon.png" /> 
+    
+    <style>
+        /* BotPulse Color Palette and Base */
+        :root {
+            --botpulse-red: #b71349;
+            --botpulse-red-dark: #8b2946;
+            --dark-bg: #1a1a1a;
+            --dark-section: #212121; /* Slightly lighter dark for contrast */
+            --text-color: #ffffff;
+            --highlight-yellow: #f1c40f; /* Retaining RustForge yellow highlight */
+        }
+
+        body {
+            font-family: 'Ubuntu', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+        }
+
+        /* Navbar Styling */
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--text-color) !important;
+            display: flex;
+            align-items: center;
+        }
+        .navbar-brand img {
+            margin-right: 10px;
+        }
+        .navbar-nav {
+        /* Align all nav items vertically to the center */
+        align-items: center;
+        }
+        
+        .nav-link {
+            color: #e0e0e0 !important;
+            transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+        color: #969696 !important;
+        }
+        .bg-dark {
+            background-color: var(--dark-section) !important;
+            display: flex;
+            align-items: center;
+        }
+
+        /* Hero Section Styling (Adapted from BotPulse) */
+        .hero-section {
+            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png'); /* RustForge Image */
+            background-size: cover;
+            background-position: center;
+            color: var(--text-color);
+            min-height: 55vh; /* Adjusted for BotPulse look */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero-content {
+            background-color: rgba(0, 0, 0, 0.65);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .hero-title {
+            font-size: 3rem; /* Larger title */
+            font-weight: 700;
+            color: var(--botpulse-red); 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem; /* Larger subtitle */
+            font-weight: 400;
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
+        }
+        .hero-feature-list {
+            list-style-type: none; /* This removes the bullet points */
+            padding-left: 0; /* This removes the default left padding browsers apply to <ul> */
+            margin-bottom: 1.5rem; /* Optional: adds space below the list, matching other elements */
+        }
+
+        /* Optional: Center the list on smaller screens if you want, assuming it takes up the full width of its container. */
+        @media (max-width: 767px) {
+        .hero-feature-list li {
+        text-align: left; /* Ensure text remains readable if centered */
+        display: block;
+        }
+    }
+        /* Primary Button (Adapted from BotPulse btn-primary1) */
+        .btn-rustforge, .btn-primary1-pulse {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 10px 25px;
+            background-color: #cc3017;
+            color: var(--text-color);
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+            margin: 10px;
+        }
+
+        .btn-rustforge i, .btn-primary1-pulse i {
+            margin-right: 8px;
+        }
+
+        .btn-rustforge:hover, .btn-primary1-pulse:hover {
+            transform: scale(1.05);
+
+            box-shadow: 0px 5px 25px rgb(255 0 0 / 55%);
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        .btn-rustforge:active, .btn-primary1-pulse:active {
+            transform: scale(0.95);
+            box-shadow: none;
+        }
+
+        /* CTA/Section Styling (Adapted from BotPulse) */
+        .cta-section {
+            background-color: var(--dark-bg);
+            padding: 50px 0;
+            color: var(--text-color);
+            text-align: center;
+            border-top: 3px solid var(--botpulse-red-dark);
+        }
+
+        .cta-content {
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.5rem; /* BotPulse size */
+            font-weight: 700;
+            margin-bottom: 2rem; /* BotPulse spacing */
+            color: var(--botpulse-red);
+        }
+
+.feature-grid-container {
+    max-width: 1200px; 
+    margin: 30px auto;
+}
+.features-section {
+            background-color: #202020;
+            padding: 60px 0;
+        }
+
+        .features-section h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .feature-card {
+            background-color: #141414;
+            border-radius: 10px;
+            padding: 40px;
+            text-align: center;
+            color: #fff;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-card h5 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 20px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #aaa;
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: #b71349;
+            margin-bottom: 10px;
+        }
+
+/* --- End Added CSS --- */
+
+        /* Footer Styling */
+        .footer {
+            background-color: #2b2b2b;
+            color: #e0e0e0;
+            padding: 20px;
+            text-align: center;
+            border-top: 2px solid var(--botpulse-red);
+        }
+        
+        /* Highlight Text Colors (Updated to BotPulse red) */
+        .highlight-text-red {
+            color: var(--botpulse-red);
+            font-weight: 500;
+        }
+        .highlight-text-yellow {
+            color: var(--highlight-yellow);
+            font-weight: 500;
+        }
+        .code-snippet {
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--highlight-yellow); 
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1.2rem; }
+            .btn-rustforge, .btn-primary1-pulse { font-size: 1rem; padding: 8px 15px; }
+            .section-title { font-size: 2rem; }
+            .feature-list li { font-size: 1rem; padding: 10px; }
+        }
+
+        @media (max-width: 576px) {
+            .hero-title { font-size: 2rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .btn-rustforge, .btn-primary1-pulse { font-size: 0.9rem; padding: 6px 12px; margin: 5px; }
+            .section-title { font-size: 1.8rem; }
+            .feature-list li { font-size: 0.9rem; }
+        }
+        
+        .code-snippet {
+            background-color: #333;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--botpulse-red); 
+        }
+
+      
+        }
+    </style>
+</head>
+
+<body class="homepage">
+
+  <div style="background-color: var(--botpulse-red); color: white; text-align: center; padding: 8px;">
+        Website Under Construction
+    </div>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid container">
+            <a class="navbar-brand" href="/">
+                <img src="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RFIcon.png" alt="RustForge Logo" style="width: 50px;">
+                RustForge
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+                
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/features"><i class="fa-solid fa-wrench"></i> Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/premium"><i class="fa-solid fa-star"></i> Premium</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/how-to"><i class="fa-solid fa-book"></i> How to Use</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://discord.gg/R4bR9JwAfv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+                    </li>
+                    <li class="nav-item d-flex align-items-center">
+                        <a class="btn btn-primary1-pulse" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="margin-left: 15px;">
+                            <i class="fa-solid fa-mug-hot" style="margin-right: 8px;"></i>  
+                            <span>Support Dev</span>
+                        </a>
+						
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   <section class="hero-section" id="home">
+        <div class="hero-content">
+            <h1 class="hero-title">RustForge</h1>
+            <p class="hero-subtitle">Premium Access</p>
+            <p class="font-weight-bold mb-4">Unlock the ultimate sign painting experience in Rust. Premium features introduce <b>VoidWeave</b>, advanced color palettes, and essential quality-of-life tools to save you time and maximize artwork quality.</p>
+            <p class="font-weight-bold mb-4">Access is granted with <b>ANY<b> donation amount via Buy Me a Coffee.</p>
+            <p class="font-weight-bold mb-4">All BMAC Subscription tiers offer Early Access builds and more!</p>
+            
+
+<a class="btn btn-primary1-pulse btn-lg" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="background-color: #FF813F; border: none;">
+                <i class="fa-solid fa-mug-hot"></i> Get Premium Access Now
+            </a>
+			<p class="mt-3 text-muted">A one-time donation grants lifetime Premium access.</p>
+        </div>
+    </section>
+    <section class="features-section" id="premium-details">
+        <div class="container">
+            <h2 class="mb-5 text-center section-title" style="color: var(--highlight-yellow);">💎 Advanced Premium Features</h2>
+            <div class="row feature-grid-container">
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-chess-board feature-icon"></i>
+                        <h5>VoidWeave Algorithm</h5>
+                        <p>The most advanced painting method for stunning, detailed, high-fidelity images. It intelligently scans your image and blends pixels for the most accurate and beautiful final artwork.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-palette feature-icon"></i>
+                        <h5>Adaptive Palette</h5>
+                        <p>Utilize new Hex Color codes and the Adaptive Palette system to achieve more vibrant and accurate tones, including multiple skin tones, without sacrificing optimized painting performance.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-redo-alt feature-icon"></i>
+                        <h5>Resume Painting on Click (F5)</h5>
+                        <p>Instantly resume your paint session from any point on the canvas after an interruption. Simply press the hotkey <code class="code-snippet">F5</code> and click to continue exactly where you left off, saving you hours of time.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-save feature-icon"></i>
+                        <h5>Session Save & Load</h5>
+                        <p>Save your painting progress and resume later. This is indispensable if you need to reboot your system, close the game, or step away for an extended period, ensuring no progress is ever lost.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-crop-alt feature-icon"></i>
+                        <h5>Integrated Image Editor</h5>
+                        <p>Prepare your artwork without external software! Access an editor directly within RustForge, featuring essential cropping and text overlay functionality for perfect pre-painting preparation.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-film feature-icon"></i>
+                        <h5>Timelapse GIF Creator & Editor</h5>
+                        <p>An exciting premium feature that automatically captures timelapse screenshots during the painting process and compiles them into a shareable, finished artwork GIF.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="comparison">
+        <div class="container">
+            <h2 class="section-title">✨ Free vs. Premium Feature Comparison</h2>
+            <p class="lead mb-5">See how RustForge Premium elevates your sign painting experience with advanced algorithms and quality-of-life tools.</p>
+
+            <div class="comparison-table-container">
+                <table class="table table-dark table-hover table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-left"><i class="fa-solid fa-cogs feature-icon-red"></i> Feature</th>
+                            <th scope="col" class="text-center text-light">Free Tier (Standard)</th>
+                            <th scope="col" class="text-center text-warning"><i class="fa-solid fa-gem feature-icon-yellow"></i> Premium Tier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left font-weight-bold">Painting Algorithm Quality</td>
+                            <td class="text-center">Standard Dithering / Closest Match</td>
+                            <td class="text-center font-weight-bold text-warning">VoidWeave Algorithm <i class="fa-solid fa-star feature-icon-yellow"></i>
+                                <small class="d-block text-muted">High-fidelity, pixel blending method</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left font-weight-bold">Advanced Color Palette</td>
+                            <td class="text-center">Standard Rust Palette (Limited Colors)</td>
+                            <td class="text-center font-weight-bold text-warning">Adaptive Palette <i class="fa-solid fa-palette feature-icon-yellow"></i>
+                                <small class="d-block text-muted">Vibrant, accurate tones using new Hex Codes</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left font-weight-bold">Resume Painting on Click (<code class="code-snippet">F5</code>)</td>
+                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
+                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included
+                                <small class="d-block text-muted">Saves significant time on disconnects</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left font-weight-bold">Session Save & Load</td>
+                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
+                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left font-weight-bold">Integrated Image Editor</td>
+                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
+                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included
+                                <small class="d-block text-muted">Crop and add text directly in-app</small>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="text-left font-weight-bold">Timelapse GIF Creator & Editor</td>
+                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
+                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included
+                                <small class="d-block text-muted">Automatically create your finished artwork GIF</small>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="hero-subtitle mt-5 mb-4" style="color: var(--text-color);">Ready to Upgrade?</h3>
+            <p>Premium access is granted with <b>ANY</b> donation amount on Buy Me a Coffee. Your support helps fund the continued development and maintenance of RustForge.</p>
+            <a class="btn btn-primary1-pulse btn-lg mt-3" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="background-color: #FF813F; border: none;">
+                <i class="fa-solid fa-mug-hot"></i> Get Premium Access Now
+            </a>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 RustForge. All rights reserved.</p>
+            <p class="mb-0">
+                <a href="https://discord.gg/R4bR9JwAfv" class="text-light" style="text-decoration: none;">Discord Support</a> |
+                <a href="https://buymeacoffee.com/rustforgedev" class="text-light" style="text-decoration: none;">Support Development</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

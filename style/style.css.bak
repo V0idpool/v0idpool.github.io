@@ -167,7 +167,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
-.header a:hover, .navbar-brand:hover {
+.header a:hover, .navbar-nav .navbar-brand:hover {
     text-decoration: none;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;

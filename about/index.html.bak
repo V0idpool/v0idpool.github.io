@@ -292,16 +292,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home</a>
+                        <a class="nav-link" href="#home"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/features"><i class="fa-solid fa-wrench"></i> Features</a>
+                        <a class="nav-link" href="#features"><i class="fa-solid fa-wrench"></i> Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/premium"><i class="fa-solid fa-star"></i> Premium</a>
+                        <a class="nav-link" href="#premium"><i class="fa-solid fa-star"></i> Premium</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/how-to"><i class="fa-solid fa-book"></i> How to Use</a>
+                        <a class="nav-link" href="#how-to-use"><i class="fa-solid fa-book"></i> How to Use</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://discord.gg/R4bR9JwAfv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>

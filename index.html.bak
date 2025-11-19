@@ -175,6 +175,7 @@
 .features-section {
             background-color: #202020;
             padding: 60px 0;
+			
         }
 
         .features-section h2 {
@@ -340,7 +341,8 @@
         </div>
     </section>
 
-<section class="cta-section" id="features">
+		
+    <section class="cta-section" id="features">
         <div class="container feature-grid-container">
             <h2 class="section-title">✨ Core Features</h2>
             <p class="lead mb-5">High-quality art for your base, simplified. Here are the powerful features included for **free**.</p>
@@ -438,100 +440,18 @@
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card premium-card-style">
-                        <i class="fa-solid fa-star feature-icon"></i>
+                    <div class="feature-card" style="border: 3px solid var(--botpulse-red); background-color: #311822;">
+                        <i class="fa-solid fa-star feature-icon" style="color: var(--highlight-yellow);"></i>
                         <div class="feature-card-title">
-                            <h5>PREMIUM ACCESS 💎</h5>
+                            <h5><span class="highlight-text-red">Premium Upgrade</span></h5>
                         </div>
-                        <p class="lead" style="color: var(--highlight-yellow); font-weight: 500;">Unlock Advanced Features & Support Development</p>
-                        <p class="mb-3">Includes: **VoidWeave Algorithm** for stunning high-fidelity images, **Adaptive Palette** (up to 512 colors), and the essential **Resume Painting on Click** (<span class="code-snippet">F5</span>) feature.</p>
-                        <hr style="border-color: rgba(255, 255, 255, 0.1);">
-                        <h6 class="text-center highlight-text-red mb-3">How to Get Premium:</h6>
-                        <p class="mb-3">**Donate ANY amount** via Buy Me a Coffee to unlock access. Membership tiers offer Early Access builds and more!</p>
-                        <a href="https://buymeacoffee.com/rustforgedev" target="_blank" class="btn btn-rustforge btn-lg mt-2" style="background-color: var(--botpulse-red);"><i class="fa-solid fa-mug-hot"></i> Donate & Get Premium</a>
+                        <p class="mb-3">Unlock the **VoidWeave Algorithm** for stunning, high-fidelity images, **Adaptive Palette** (up to 512 colors), and the essential **Resume Painting on Click** (<span class="code-snippet">F5</span>) feature.</p>
+                        <a href="/premium" class="btn btn-rustforge btn-sm mt-2" style="background-color: var(--botpulse-red);"><i class="fa-solid fa-diamond"></i> Learn More</a>
                     </div>
-                    </div>
+                </div>
 
             </div>
 
-        </div>
-    </section>
-    
-    <section class="cta-section" id="how-to" style="padding-top: 20px;">
-        <div class="container feature-grid-container">
-            <h2 class="section-title">⚡️ Quick Start & Hotkeys</h2>
-            <p class="lead mb-5">Get up and running in minutes. The most critical information for a smooth painting experience at a glance.</p>
-            
-            <h3 class="hero-subtitle mb-4" style="color: var(--text-color);">The 3-Step Painting Process</h3>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-12 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-image feature-icon" style="color: var(--highlight-yellow);"></i>
-                        <div class="feature-card-title">
-                            <h5>1. Load Image</h5>
-                        </div>
-                        <p class="mb-0">Load any image file from your computer or provide a direct URL.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-crop-alt feature-icon"></i>
-                        <div class="feature-card-title">
-                            <h5>2. Set Regions</h5>
-                        </div>
-                        <p class="mb-0">Define the **Palette Area** (<span class="code-snippet">F10</span>) and the **Canvas Area** (<span class="code-snippet">F9</span>) in-game. Press <span class="code-snippet">Enter</span> to save the regions.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-play feature-icon" style="color: var(--botpulse-red);"></i>
-                        <div class="feature-card-title">
-                            <h5>3. Start Painting</h5>
-                        </div>
-                        <p class="mb-0">Press the **Start/Pause** hotkey (<span class="code-snippet">F11</span> default) to begin the automated process.</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="hero-subtitle mt-5 mb-4" style="color: var(--text-color);">Essential Hotkeys Reference</h3>
-            <div class="row justify-content-center">
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card" style="padding: 20px;">
-                        <div class="feature-card-title">
-                            <span class="code-snippet">F9</span>: **Canvas Overlay**
-                        </div>
-                        <p class="mb-0">Toggles the canvas selection overlay to define the painting area.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card" style="padding: 20px;">
-                        <div class="feature-card-title">
-                            <span class="code-snippet">F10</span>: **Palette Overlay**
-                        </div>
-                        <p class="mb-0">Toggles the palette selection overlay to define the color palette area.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card" style="padding: 20px;">
-                        <div class="feature-card-title">
-                            <span class="code-snippet">F11</span>: **Start / Pause**
-                        </div>
-                        <p class="mb-0">Starts or pauses the painting process.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="feature-card" style="padding: 20px;">
-                        <div class="feature-card-title">
-                            <span class="code-snippet">Escape</span>: **Stop**
-                        </div>
-                        <p class="mb-0">Immediately stops the painting process.</p>
-                    </div>
-                </div>
-                <div class="col-12 text-center mt-3">
-                    <p>Hotkeys are configurable in the settings window. **Premium** users also unlock <span class="code-snippet">F5</span> to **Resume Painting on Click**.</p>
-                </div>
-            </div>
         </div>
     </section>
 

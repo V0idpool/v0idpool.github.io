@@ -319,69 +319,129 @@
         </div>
     </nav>
 
-   <section class="hero-section" id="home">
+   <section class="hero-section" id="features-hero">
         <div class="hero-content">
-            <h1 class="hero-title">RustForge</h1>
-            <p class="hero-subtitle">Premium Access</p>
-            <p class="font-weight-bold mb-4">Unlock the ultimate sign painting experience in Rust. Premium features introduce <b>VoidWeave</b>, advanced color palettes, and essential quality-of-life tools to save you time and maximize artwork quality.</p>
-            <p class="font-weight-bold mb-4">Access is granted with <b>ANY<b> donation amount via Buy Me a Coffee.</p>
-            <p class="font-weight-bold mb-4">All BMAC Subscription tiers offer Early Access builds and more!</p>
-            
+            <h1 class="hero-title">Automate Your Rust Sign Art</h1>
+            <p class="hero-subtitle">Convert any image to the Rust palette and paint it in-game with pixel-perfect precision.</p>
+            <p class="mb-4">RustForge automatically converts images to the closest Rust color palette and handles the entire painting process for you. Save hours of tedious work and get stunning, custom signs in minutes.</p>
+			<p class="font-weight-bold mb-4">Choose between the Standard Free Tier or the Advanced Premium Tier for maximum control and quality.</p>
 
-<a class="btn btn-primary1-pulse btn-lg" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="background-color: #FF813F; border: none;">
-                <i class="fa-solid fa-mug-hot"></i> Get Premium Access Now
+
+            <a class="btn btn-rustforge btn-lg" href="/how-to" style="background-color: var(--botpulse-red); border: none;">
+                <i class="fa-solid fa-book"></i> See How It Works
             </a>
-			<p class="mt-3 text-muted">A one-time donation grants lifetime Premium access.</p>
+            <a class="btn btn-primary1-pulse btn-lg" href="#comparison" style="background-color: var(--highlight-yellow); border: none;">
+                <i class="fa-solid fa-star" style="color: #1a1a1a;"></i> <span style="color: #1a1a1a;">Compare Premium</span>
+            </a>
         </div>
     </section>
-    <section class="features-section" id="premium-details">
+
+    <section class="features-section" id="core-details">
         <div class="container">
-            <h2 class="mb-5 text-center section-title" style="color: var(--highlight-yellow);">💎 Advanced Premium Features</h2>
+            <h2 class="mb-5 text-center section-title" style="color: var(--botpulse-red);">Core Functionality (Free Tier)</h2>
             <div class="row feature-grid-container">
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
-                        <i class="fa-solid fa-chess-board feature-icon"></i>
+                        <i class="fa-solid fa-image feature-icon feature-icon-standard"></i>
+                        <h5>Automated Image Conversion</h5>
+                        <p>Automatically process any image file and convert its colors to the **Standard Rust Palette** (including the new adaptive palette which supports up to 512 colors).</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-brush feature-icon feature-icon-standard"></i>
+                        <h5>Precision Painting</h5>
+                        <p>The core algorithm handles the mouse movements, color selection, and pixel painting with high precision to reproduce your image accurately onto any in-game sign.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-expand feature-icon feature-icon-standard"></i>
+                        <h5>Configurable Painting Area</h5>
+                        <p>Easily define the in-game canvas and color palette regions using hotkeys: **Canvas Overlay** (<code class="code-snippet">F9</code>) and **Palette Overlay** (<code class="code-snippet">F10</code>).</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-gamepad feature-icon feature-icon-standard"></i>
+                        <h5>Full Session Control</h5>
+                        <p>Control the painting process in real-time with hotkeys: **Start/Pause** (<code class="code-snippet">F11</code>) and **Stop** (<code class="code-snippet">Escape</code>). Pause to interact with the game or chat.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-tachometer-alt feature-icon feature-icon-standard"></i>
+                        <h5>Adjustable Speed</h5>
+                        <p>Tailor the painting speed and processing quality to match your hardware and server performance for optimal in-game results.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-shield-alt feature-icon feature-icon-standard"></i>
+                        <h5>Security & Safety</h5>
+                        <p>Designed to be undetected by anti-cheat systems. RustForge only interacts with your local application, providing a secure painting solution.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="features-section" id="premium-features-grid" style="background-color: var(--dark-bg);">
+        <div class="container">
+            <h2 class="mb-5 text-center section-title" style="color: var(--highlight-yellow);">💎 Premium-Only Features</h2>
+            <p class="lead mb-5 text-center" style="color: #aaa;">Unlock ultimate quality and convenience with advanced algorithms and essential quality-of-life tools.</p>
+            <div class="row feature-grid-container">
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card" style="background-color: #0d0d0d; border: 1px solid var(--highlight-yellow);">
+                        <i class="fa-solid fa-chess-board feature-icon" style="color: var(--highlight-yellow);"></i>
                         <h5>VoidWeave Algorithm</h5>
                         <p>The most advanced painting method for stunning, detailed, high-fidelity images. It intelligently scans your image and blends pixels for the most accurate and beautiful final artwork.</p>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-palette feature-icon"></i>
+                    <div class="feature-card" style="background-color: #0d0d0d; border: 1px solid var(--highlight-yellow);">
+                        <i class="fa-solid fa-palette feature-icon" style="color: var(--highlight-yellow);"></i>
                         <h5>Adaptive Palette</h5>
                         <p>Utilize new Hex Color codes and the Adaptive Palette system to achieve more vibrant and accurate tones, including multiple skin tones, without sacrificing optimized painting performance.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-redo-alt feature-icon"></i>
+                    <div class="feature-card" style="background-color: #0d0d0d; border: 1px solid var(--highlight-yellow);">
+                        <i class="fa-solid fa-redo-alt feature-icon" style="color: var(--highlight-yellow);"></i>
                         <h5>Resume Painting on Click (F5)</h5>
                         <p>Instantly resume your paint session from any point on the canvas after an interruption. Simply press the hotkey <code class="code-snippet">F5</code> and click to continue exactly where you left off, saving you hours of time.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-save feature-icon"></i>
+                    <div class="feature-card" style="background-color: #0d0d0d; border: 1px solid var(--highlight-yellow);">
+                        <i class="fa-solid fa-save feature-icon" style="color: var(--highlight-yellow);"></i>
                         <h5>Session Save & Load</h5>
                         <p>Save your painting progress and resume later. This is indispensable if you need to reboot your system, close the game, or step away for an extended period, ensuring no progress is ever lost.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-crop-alt feature-icon"></i>
+                    <div class="feature-card" style="background-color: #0d0d0d; border: 1px solid var(--highlight-yellow);">
+                        <i class="fa-solid fa-crop-alt feature-icon" style="color: var(--highlight-yellow);"></i>
                         <h5>Integrated Image Editor</h5>
                         <p>Prepare your artwork without external software! Access an editor directly within RustForge, featuring essential cropping and text overlay functionality for perfect pre-painting preparation.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-film feature-icon"></i>
+                    <div class="feature-card" style="background-color: #0d0d0d; border: 1px solid var(--highlight-yellow);">
+                        <i class="fa-solid fa-film feature-icon" style="color: var(--highlight-yellow);"></i>
                         <h5>Timelapse GIF Creator & Editor</h5>
                         <p>An exciting premium feature that automatically captures timelapse screenshots during the painting process and compiles them into a shareable, finished artwork GIF.</p>
                     </div>
@@ -446,13 +506,24 @@
                                 <small class="d-block text-muted">Automatically create your finished artwork GIF</small>
                             </td>
                         </tr>
+                        <tr>
+                            <td class="text-left font-weight-bold">Core Automatic Painting</td>
+                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
+                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
+                        </tr>
+                        <tr>
+                            <td class="text-left font-weight-bold">Basic Hotkey Control (F9, F10, F11, Escape)</td>
+                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
+                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
-            <h3 class="hero-subtitle mt-5 mb-4" style="color: var(--text-color);">Ready to Upgrade?</h3>
+            <h3 class="hero-subtitle mt-5 mb-4" style="color: var(--text-color);">Ready to Unlock the Best?</h3>
             <p>Premium access is granted with <b>ANY</b> donation amount on Buy Me a Coffee. Your support helps fund the continued development and maintenance of RustForge.</p>
-            <a class="btn btn-primary1-pulse btn-lg mt-3" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="background-color: #FF813F; border: none;">
+            <a class="btn btn-primary1-pulse btn-lg mt-3" href="https://buymeacoffee.com/rustforgedev" target="_blank"
+                style="background-color: #FF813F; border: none;">
                 <i class="fa-solid fa-mug-hot"></i> Get Premium Access Now
             </a>
         </div>

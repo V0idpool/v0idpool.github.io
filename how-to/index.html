@@ -17,14 +17,13 @@
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RFIcon.png" /> 
     
     <style>
-        /* BotPulse Color Palette and Base */
         :root {
             --botpulse-red: #b71349;
             --botpulse-red-dark: #8b2946;
             --dark-bg: #1a1a1a;
-            --dark-section: #212121; /* Slightly lighter dark for contrast */
+            --dark-section: #212121;
             --text-color: #ffffff;
-            --highlight-yellow: #f1c40f; /* Retaining RustForge yellow highlight */
+            --highlight-yellow: #f1c40f; 
         }
 
         body {
@@ -33,7 +32,6 @@
             color: var(--text-color);
         }
 
-        /* Navbar Styling */
         .navbar-brand {
             font-weight: 700;
             color: var(--text-color) !important;
@@ -44,7 +42,6 @@
             margin-right: 10px;
         }
         .navbar-nav {
-        /* Align all nav items vertically to the center */
         align-items: center;
         }
         
@@ -61,13 +58,12 @@
             align-items: center;
         }
 
-        /* Hero Section Styling (Adapted from BotPulse) */
         .hero-section {
-            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png'); /* RustForge Image */
+            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png');
             background-size: cover;
             background-position: center;
             color: var(--text-color);
-            min-height: 55vh; /* Adjusted for BotPulse look */
+            min-height: 55vh;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -84,32 +80,30 @@
         }
 
         .hero-title {
-            font-size: 3rem; /* Larger title */
+            font-size: 3rem;
             font-weight: 700;
             color: var(--botpulse-red); 
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
         .hero-subtitle {
-            font-size: 1.5rem; /* Larger subtitle */
+            font-size: 1.5rem;
             font-weight: 400;
             color: var(--text-color);
             margin-bottom: 1.5rem;
         }
         .hero-feature-list {
-            list-style-type: none; /* This removes the bullet points */
-            padding-left: 0; /* This removes the default left padding browsers apply to <ul> */
-            margin-bottom: 1.5rem; /* Optional: adds space below the list, matching other elements */
+            list-style-type: none; 
+            padding-left: 0;
+            margin-bottom: 1.5rem; 
         }
 
-        /* Optional: Center the list on smaller screens if you want, assuming it takes up the full width of its container. */
         @media (max-width: 767px) {
         .hero-feature-list li {
-        text-align: left; /* Ensure text remains readable if centered */
+        text-align: left;
         display: block;
         }
     }
-        /* Primary Button (Adapted from BotPulse btn-primary1) */
         .btn-rustforge, .btn-primary1-pulse {
             display: inline-flex;
             align-items: center;
@@ -147,7 +141,6 @@
             box-shadow: none;
         }
 
-        /* CTA/Section Styling (Adapted from BotPulse) */
         .cta-section {
             background-color: var(--dark-bg);
             padding: 50px 0;
@@ -162,9 +155,9 @@
         }
 
         .section-title {
-            font-size: 2.5rem; /* BotPulse size */
+            font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 2rem; /* BotPulse spacing */
+            margin-bottom: 2rem;
             color: var(--botpulse-red);
         }
 
@@ -216,9 +209,7 @@
             margin-bottom: 10px;
         }
 
-/* --- End Added CSS --- */
 
-        /* Footer Styling */
         .footer {
             background-color: #2b2b2b;
             color: #e0e0e0;
@@ -227,7 +218,6 @@
             border-top: 2px solid var(--botpulse-red);
         }
         
-        /* Highlight Text Colors (Updated to BotPulse red) */
         .highlight-text-red {
             color: var(--botpulse-red);
             font-weight: 500;
@@ -244,7 +234,6 @@
             color: var(--highlight-yellow); 
         }
 
-        /* Responsive adjustments */
         @media (max-width: 768px) {
             .hero-title { font-size: 2.5rem; }
             .hero-subtitle { font-size: 1.2rem; }
@@ -317,276 +306,159 @@
             </div>
         </div>
     </nav>
-
-   <section class="hero-section" id="home">
+<section class="hero-section" id="home">
         <div class="hero-content">
             <h1 class="hero-title">RustForge</h1>
-            <p class="hero-subtitle">Automated In-Game Sign Painter for Rust</p>
-            <p>RustForge takes any image, automatically converts it to the closest Rust color palette (or uses the new adaptive palette for up to 512 colors), and paints it directly onto a sign in-game.</p>
-            <p>It’s perfect for adding custom, high-quality art to your base without spending hours on it.</p>
-            
-            <ul class="hero-feature-list">
-                <li><i class="fa-solid fa-paintbrush" style="margin-right: 10px; color: var(--botpulse-red);"></i> Automated In-Game Painting</li>
-                <li><i class="fa-solid fa-palette" style="margin-right: 10px; color: var(--botpulse-red);"></i> Adaptive Color Palette Support</li>
-                <li><i class="fa-solid fa-image" style="margin-right: 10px; color: var(--botpulse-red);"></i> Integrated Image Editor (Premium)</li>
-            </ul>
-
-           <a href="https://github.com/V0idpool/RustForge/releases/latest" target="_blank" class="btn btn-rustforge btn-lg">
-                    <i class="fa-solid fa-download"></i> Download Latest Version
-                </a>
-                <a href="https://discord.gg/R4bR9JwAfv" target="_blank" class="btn btn-rustforge btn-lg" style="background-color: #7289DA;">
-                    <i class="fa-brands fa-discord"></i> Discord Support
-                </a>
+            <p class="hero-subtitle">Automated Painting Guide</p>
+            <p class="font-weight-bold mb-4">Follow these simple steps to start painting your images onto Rust signs instantly.</p>
+           
         </div>
     </section>
-<section id="premium-glance" class="cta-section">
-            <div class="container">
-                <h2 class="section-title">RustForge Premium</h2>
-                <p class="lead mb-5">Unlock advanced features and support development to help keep RustForge free for everyone.</p>
+  
 
-                <div class="row justify-content-center">
-                    <div class="col-lg-8 col-md-10">
-                        <div class="feature-card" style="background-color: #2b2b2b; padding: 30px; border: 3px solid var(--botpulse-red); box-shadow: 0 0 20px rgba(183, 19, 73, 0.4);">
-                            <i class="fa-solid fa-gem feature-icon" style="font-size: 3rem; color: #ffdd57;"></i>
-                            <h5 class="mt-3" style="color: #ffdd57;">Key Premium Benefits</h5>
-                            <ul class="list-unstyled text-left mx-auto" style="max-width: 350px; margin-top: 20px;">
-                                <li class="mb-2"><i class="fa-solid fa-check highlight-text-red mr-2"></i> **VoidWeave Algorithm:** The most advanced, high-fidelity painting method.</li>
-                                <li class="mb-2"><i class="fa-solid fa-check highlight-text-red mr-2"></i> **Adaptive Palette:** For more vibrant and accurate color tones.</li>
-                                <li class="mb-2"><i class="fa-solid fa-check highlight-text-red mr-2"></i> **Resume Painting on Click:** Save time and never lose progress.</li>
-                            </ul>
-                            <hr style="border-color: #444;">
-                            <h5 class="mt-4 mb-3" style="color: var(--text-color);">How to get Premium:</h5>
-                            <a href="https://buymeacoffee.com/rustforgedev" target="_blank" class="btn btn-rustforge btn-lg" style="background-color: #FF813F; border: none;">
-                                <i class="fa-solid fa-mug-hot"></i> Donate on Buy Me a Coffee
-                            </a>
-                            <a href="/premium.html" class="btn btn-rustforge btn-lg btn-secondary" style="background-color: #444;">
-                                <i class="fa-solid fa-circle-info"></i> View All Premium Features
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-   <section class="cta-section" id="features">
-       <div class="container feature-grid-container">
-            <h2 class="section-title">Key Features</h2>
+    <section class="cta-section" id="how-to-guide">
+        <div class="container feature-grid-container">
+            <h2 class="section-title">Step-by-Step Instructions</h2>
             <div class="row mt-4">
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-folder-open feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Load Recent Files</h5>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body">
+                            <h5 class="feature-step-number">STEP 1</h5>
+                            <i class="fa-solid fa-file-image feature-icon"></i>
+                            <h5 class="card-title">Load Your Image</h5>
+                            <p class="card-text">Use the main RustForge application window to load your desired image file by clicking the <strong>"Load Image..."</strong> button.</p>
                         </div>
-                        <p class="mb-0">Quickly access the last 10 used images from a new menu.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-ban feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Background Color Ignore</h5>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body">
+                            <h5 class="feature-step-number">STEP 2</h5>
+                            <i class="fa-solid fa-vector-square feature-icon"></i>
+                            <h5 class="card-title">Capture Canvas Region</h5>
+                            <p class="card-text">In-game, use the <strong>Canvas</strong> hotkey (<span class="code-snippet">F9</span> default) to draw a box around the entire <strong>in-game canvas</strong> where the painting will occur.</p>
+                            <small>Press <span class="code-snippet">Enter</span> to save the selection.</small>
                         </div>
-                        <p class="mb-0">Skip specific colors during painting (e.g., white borders) to save time.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-sliders feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Customizable Color Tolerance</h5>
-                        </div>
-                        <p class="mb-0">Fine-tune how strictly background colors are ignored.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-swatchbook feature-icon"></i>
-                        <div class="feature-card-title">
-                             
-                            <h5>Color Space Selection</h5>
-                        </div>
-                        <p class="mb-0">Choose between Euclidean RGB or CIEDE2000 for color matching.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-eye-dropper feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Transparency Threshold Setting</h5>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body">
+                            <h5 class="feature-step-number">STEP 3</h5>
+                            <i class="fa-solid fa-palette feature-icon"></i>
+                            <h5 class="card-title">Capture Palette Region</h5>
+                            <p class="card-text">Use the <strong>Palette</strong> hotkey (<span class="code-snippet">F10</span> default) to draw a box only around the <strong>in-game color palette</strong>. This samples the available colors.</p>
+                            <small class="highlight-text-red">NOTE: Only capture the color palette area!</small>
                         </div>
-                        <p class="mb-0">Define a threshold for alpha transparency to skip highly transparent pixels.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-brands fa-discord feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Discord Rich Presence</h5>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body">
+                            <h5 class="feature-step-number">STEP 4</h5>
+                            <i class="fa-solid fa-gear feature-icon"></i>
+                            <h5 class="card-title">Configure Settings</h5>
+                            <p class="card-text">Open the settings window to select your preferred painting method (e.g., VoidWeave), apply filters, and adjust the paint speed for optimal results.</p>
                         </div>
-                        <p class="mb-0">Display your painting status in your Discord profile.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-camera-retro feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Screenshot on Finish Toggle</h5>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body">
+                            <h5 class="feature-step-number">STEP 5</h5>
+                            <i class="fa-solid fa-play feature-icon"></i>
+                            <h5 class="card-title">Start Painting</h5>
+                            <p class="card-text">Once your image is processed and both the Canvas and Palette regions are correctly defined, press the <strong>Start</strong> hotkey to begin the automated painting process.</p>
+                            <small><span class="code-snippet">F11</span> default</small>
                         </div>
-                        <p class="mb-0">Automatically capture a screenshot of your finished painting.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-rocket feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Dedicated Splash Screen</h5>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body">
+                            <h5 class="feature-step-number">STEP 6</h5>
+                            <i class="fa-solid fa-pause feature-icon"></i>
+                            <h5 class="card-title">Pause and Stop</h5>
+                            <p class="card-text">Use the assigned hotkeys to pause or stop the painting process at any time to regain control of your mouse.</p>
+                            <small><span class="code-snippet">F11</span> to Pause/Resume, <span class="code-snippet">Escape</span> to Stop</small>
                         </div>
-                        <p class="mb-0">Smoother startup experience with an elegant loading process.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-bug feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Advanced Error Logging & Support Integration</h5>
-                        </div>
-                        <p class="mb-0">Enhanced logging to <span class="code-snippet">RF_Logs.txt</span> and quick access to Discord support.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-clock feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Mouse Click Delay Setting</h5>
-                        </div>
-                        <p class="mb-0">Control delay for automated mouse movements for reliability.</p>
-                    </div>
-                </div>
-
-            </div>
-            
-            <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">🎨 Multiple Painting Methods</h3>
-            <div class="row mt-4">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-brush feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>VoidWeave Algorithm</h5> 
-                            <small>(Premium)</small>
-                        </div>
-                        <p class="mb-0">Default, most advanced, high-fidelity for complex images. Scans the image, and blends pixels as it paints.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-arrow-right feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Scanline</h5>
-                        </div>
-                        <p class="mb-0">Methodical, line-by-line painting.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-paint-roller feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Crayon Eater</h5>
-                        </div>
-                        <p class="mb-0">Distinct painting style with character.</p>
                     </div>
                 </div>
             </div>
-
-            </div>
+        </div>
     </section>
 
-    <section class="cta-section" id="how-to-use">
-       <div class="container feature-grid-container">
-            <h2 class="section-title">How to Use RustForge</h2>
-            
-            <div class="row mt-4">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-file-image feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Load an Image</h5>
+    <section class="cta-section" id="hotkey-reference" style="padding-top: 0;">
+        <div class="container feature-grid-container">
+            <h2 class="section-title">Default Hotkeys Reference</h2>
+            <div class="row mt-4 justify-content-center">
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body text-center d-flex flex-column justify-content-center">
+                            <i class="fa-solid fa-vector-square feature-icon" style="font-size: 2rem;"></i>
+                            <div class="card-title hotkey-ref-card-title">
+                                <span class="code-snippet">F9</span>: <span class="highlight-text-red">Canvas Overlay Toggle</span>
+                            </div>
+                            <p class="card-text mb-0">Toggles the canvas selection overlay to define the painting area.</p>
                         </div>
-                        <p class="mb-0">Use the main RustForge window to load your desired image by clicking "Load Image...".</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-crosshairs feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Capture Your Regions</h5>
-                            <small class="ml-2">(Press <span class="code-snippet">Enter</span> after setting Canvas/Palette areas to save)</small>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body text-center d-flex flex-column justify-content-center">
+                            <i class="fa-solid fa-fill-drip feature-icon" style="font-size: 2rem;"></i>
+                            <div class="card-title hotkey-ref-card-title">
+                                <span class="code-snippet">F10</span>: <span class="highlight-text-red">Palette Overlay Toggle</span>
+                            </div>
+                            <p class="card-text mb-0">Toggles the palette selection overlay to define the color palette area.</p>
                         </div>
-                        <p class="mb-1"><i class="fa-solid fa-paint-brush"></i> <span class="highlight-text-red">Palette</span>: Use hotkey (<span class="code-snippet">F10</span> default) to draw a box around the in-game color palette. (ONLY CAPTURE THE COLOR PALETTE AREA)</p>
-                        <p class="mb-0"><i class="fa-solid fa-vector-square"></i> <span class="highlight-text-red">Canvas</span>: Use hotkey (<span class="code-snippet">F9</span> default) to draw a box around the in-game canvas where painting will occur.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-gear feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Configure Settings</h5>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body text-center d-flex flex-column justify-content-center">
+                            <i class="fa-solid fa-play-pause feature-icon" style="font-size: 2rem;"></i>
+                            <div class="card-title hotkey-ref-card-title">
+                                <span class="code-snippet">F11</span>: <span class="highlight-text-red">Start / Pause</span>
+                            </div>
+                            <p class="card-text mb-0">Starts the painting process or pauses a running session.</p>
                         </div>
-                        <p class="mb-0">In the settings window, select your preferred paint method, apply filters, and adjust paint speed.</p>
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-play feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Start Painting</h5>
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body text-center d-flex flex-column justify-content-center">
+                            <i class="fa-solid fa-hand-paper feature-icon" style="font-size: 2rem;"></i>
+                            <div class="card-title hotkey-ref-card-title">
+                                <span class="code-snippet">Escape</span>: <span class="highlight-text-red">Stop</span>
+                            </div>
+                            <p class="card-text mb-0">Immediately stops the painting process.</p>
                         </div>
-                        <p class="mb-0">Once processed and regions defined, press the "Start" hotkey (<span class="code-snippet">F11</span> default) to begin.</p>
                     </div>
                 </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-pause feature-icon"></i><i class="fa-solid fa-stop ml-1 feature-icon"></i> 
-                        <div class="feature-card-title">
-                            
-                            <h5>Pause and Stop</h5>
+
+                <div class="col-lg-4 col-md-6 mb-4 d-flex">
+                    <div class="feature-card card flex-fill">
+                        <div class="card-body text-center d-flex flex-column justify-content-center">
+                            <i class="fa-solid fa-location-arrow feature-icon" style="font-size: 2rem;"></i>
+                            <div class="card-title hotkey-ref-card-title">
+                                <span class="code-snippet">F5</span>: <span class="highlight-text-red">Resume On Click</span>
+                            </div>
+                            <p class="card-text mb-0">Click a point on the canvas with your image loaded to resume the paint session from that row.</p>
                         </div>
-                        <p class="mb-0">Use assigned hotkeys (<span class="code-snippet">F11</span> for pause, <span class="code-snippet">Escape</span> for stop) to control painting.</p>
                     </div>
                 </div>
             </div>
-            </div>
+            <p class="text-center mt-3" style="color: #999;">Hotkeys are fully <strong>configurable</strong> in the application's settings window.</p>
+        </div>
     </section>
 
     <footer class="footer">

@@ -399,8 +399,8 @@
         <div class="container">
             <p>&copy; 2024 RustForge. All rights reserved.</p>
             <p class="mb-0">
-                <a href="https://discord.gg/R4bR9JwAfv" class="text-light" style="text-decoration: none;">Discord Support</a> |
-                <a href="https://buymeacoffee.com/rustforgedev" class="text-light" style="text-decoration: none;">Support Development</a>
+                <a href="../tos/index.html" class="text-light" style="text-decoration: none;">Terms of Service</a> |
+                <a href="../privacy/index.html" class="text-light" style="text-decoration: none;">Privacy Policy</a>
             </p>
         </div>
     </footer>

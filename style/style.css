@@ -454,7 +454,7 @@ body {
 
 /* Main Content Styling */
 .main-content {
-    margin-left: 270px; /* Adjust based on sidebar width */
+  /*  margin-left: 270px; /* Adjust based on sidebar width */ */
     padding: 20px;
 }
 

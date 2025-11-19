@@ -13,7 +13,7 @@
     <meta property="og:title" content="RustForge | Automated In-Game Sign Painter for Rust" />
     <meta property="og:url" content="https://v0idpool.github.io/" /> <meta property="og:type" content="website" />
     <meta property="og:description" content="RustForge automatically converts images to the Rust color palette and paints them onto in-game signs with precision. Supports adaptive palette, resume painting, and an integrated editor." />
-    <meta property="og:image" content="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png" /> <meta property="og:image:alt" content="RustForge Software Preview" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/refhome.png" /> <meta property="og:image:alt" content="RustForge Software Preview" />
     <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RFIcon.png" /> 
     
     <style>
@@ -294,8 +294,13 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/how-to"><i class="fa-solid fa-book"></i> How to Use</a>
                     </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-book"></i> Gallery</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://discord.gg/R4bR9JwAfv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
+                    </li>
+					
                     </li>
                     <li class="nav-item d-flex align-items-center">
                         <a class="btn btn-primary1-pulse" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="margin-left: 15px;">
@@ -343,7 +348,7 @@
                     <div class="feature-card">
                         <i class="fa-solid fa-brush feature-icon feature-icon-standard"></i>
                         <h5>Precision Painting</h5>
-                        <p>The core algorithm handles the mouse movements, color selection, and pixel painting with high precision to reproduce your image accurately onto any in-game sign.</p>
+                        <p>The core algorithm handles the mouse movements, color selection, and pixel painting with high precision to reproduce your image accurately onto any in-game sign.<br><br></p>
                     </div>
                 </div>
 
@@ -351,7 +356,7 @@
                     <div class="feature-card">
                         <i class="fa-solid fa-expand feature-icon feature-icon-standard"></i>
                         <h5>Configurable Painting Area</h5>
-                        <p>Easily define the in-game canvas and color palette regions using hotkeys: Canvas Overlay (<code class="code-snippet">F9</code>) and Palette Overlay (<code class="code-snippet">F10</code>).</p>
+                        <p>Easily define the in-game canvas and color palette regions using hotkeys: Canvas Overlay (<code class="code-snippet">F9</code>) and Palette Overlay (<code class="code-snippet">F10</code>).<br><br></p>
                     </div>
                 </div>
 
@@ -394,6 +399,7 @@
                         <i class="fa-solid fa-chess-board feature-icon" style="color: var(--highlight-yellow);"></i>
                         <h5>VoidWeave Algorithm</h5>
                         <p>The most advanced painting method for stunning, detailed, high-fidelity images. It intelligently scans your image and blends pixels for the most accurate and beautiful final artwork.</p>
+						<br><br>
                     </div>
                 </div>
 
@@ -402,6 +408,7 @@
                         <i class="fa-solid fa-palette feature-icon" style="color: var(--highlight-yellow);"></i>
                         <h5>Adaptive Palette</h5>
                         <p>Utilize new Hex Color codes and the Adaptive Palette system to achieve more vibrant and accurate tones, including multiple skin tones, without sacrificing optimized painting performance.</p>
+						<br>
                     </div>
                 </div>
 
@@ -426,6 +433,7 @@
                         <i class="fa-solid fa-crop-alt feature-icon" style="color: var(--highlight-yellow);"></i>
                         <h5>Integrated Image Editor</h5>
                         <p>Prepare your artwork without external software! Access an editor directly within RustForge, featuring essential cropping and text overlay functionality for perfect pre-painting preparation.</p>
+						<br>
                     </div>
                 </div>
 
@@ -496,16 +504,7 @@
                                 <small class="d-block text-muted">Automatically create your finished artwork GIF</small>
                             </td>
                         </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Core Automatic Painting</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Basic Hotkey Control (F9, F10, F11, Escape)</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
-                        </tr>
+                        
                     </tbody>
                 </table>
             </div>

@@ -103,7 +103,7 @@ body {
 }
 /* Special rule for the homepage */
 .homepage .container {
-    max-width: 1200px;
+    max-width: 55%;
     margin: 0 auto;
     padding: 20px;
 }
@@ -167,7 +167,7 @@ body {
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
 }
-.header a:hover, .navbar-nav .navbar-brand:hover {
+.header a:hover, .navbar-brand:hover {
     text-decoration: none;
     background: rgba(255, 255, 255, 0.1);
     border-radius: 5px;
@@ -385,7 +385,14 @@ body {
     background-color: #6cc644; /* Green hover background */
     color: #fff;
 }
-
+.nav-link .github-link {
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+    padding: 5px 15px;
+    transition: color 0.3s ease;
+}
 .highlighted-links a.promo-link {
     color: #ffd700; /* Gold color for promos */
 }
@@ -454,7 +461,7 @@ body {
 
 /* Main Content Styling */
 .main-content {
-    margin-left: 270px; /* Adjust based on sidebar width */
+  /*  margin-left: 270px; /* Adjust based on sidebar width */ */
     padding: 20px;
 }
 

@@ -60,7 +60,7 @@
         }
 
         .hero-section {
-            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png');
+            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/rfhome.png');
             background-size: cover;
             background-position: center;
             color: var(--text-color);
@@ -293,6 +293,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/how-to"><i class="fa-solid fa-book"></i> How to Use</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="#"><i class="fa-solid fa-book"></i> Gallery</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://discord.gg/R4bR9JwAfv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>

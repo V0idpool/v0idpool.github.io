@@ -21,9 +21,9 @@
             --botpulse-red: #b71349;
             --botpulse-red-dark: #8b2946;
             --dark-bg: #1a1a1a;
-            --dark-section: #212121; 
+            --dark-section: #212121;
             --text-color: #ffffff;
-            --highlight-yellow: #f1c40f; 
+            --highlight-yellow: #f1c40f;
         }
 
         body {
@@ -32,7 +32,6 @@
             color: var(--text-color);
         }
 
-        /* Navbar Styling */
         .navbar-brand {
             font-weight: 700;
             color: var(--text-color) !important;
@@ -60,7 +59,7 @@
         }
 
         .hero-section {
-            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png');
+            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png'); /* RustForge Image */
             background-size: cover;
             background-position: center;
             color: var(--text-color);
@@ -99,6 +98,7 @@
             margin-bottom: 1.5rem;
         }
 
+       
         @media (max-width: 767px) {
         .hero-feature-list li {
         text-align: left;
@@ -309,150 +309,81 @@
         </div>
     </nav>
 
-   <section class="hero-section" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">RustForge</h1>
-            <p class="hero-subtitle">Premium Access</p>
-            <p class="font-weight-bold mb-4">Unlock the ultimate sign painting experience in Rust. Premium features introduce <b>VoidWeave</b>, advanced color palettes, and essential quality-of-life tools to save you time and maximize artwork quality.</p>
-            <p class="font-weight-bold mb-4">Access is granted with <b>ANY<b> donation amount via Buy Me a Coffee.</p>
-            <p class="font-weight-bold mb-4">All BMAC Subscription tiers offer Early Access builds and more!</p>
-            
+   <section class="main-content">
+    <div class="container">
+        <h1 class="text-center">RustForge Privacy Policy</h1>
+        <p class="text-center text-muted">Effective Date: [October 22, 2025]</p>
+        
+        <p class="mt-4">This Privacy Policy describes how [Void Labs] ("The Developer") collects, uses, and discloses information related to your use of the RustForge application ("RustForge" or "the App"), a third-party utility for creating in-game sign art in Rust.</p>
 
-<a class="btn btn-primary1-pulse btn-lg" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="background-color: #FF813F; border: none;">
-                <i class="fa-solid fa-mug-hot"></i> Get Premium Access Now
-            </a>
-			<p class="mt-3 text-muted">A one-time donation grants lifetime Premium access.</p>
-        </div>
-    </section>
-    <section class="features-section" id="premium-details">
-        <div class="container">
-            <h2 class="mb-5 text-center section-title" style="color: var(--highlight-yellow);">💎 Advanced Premium Features</h2>
-            <div class="row feature-grid-container">
+        <ol style="list-style-type: none; padding-left: 0;">
+            <li>
+                <h2>1. Data RustForge Does Not Collect</h2>
+                <p>RustForge is designed to function primarily as a local desktop application. The Developer does not collect, store, or transmit the following information about your usage:</p>
+                <ul>
+                    <li><strong>Personal Identifiable Information (PII):</strong> We do not collect your name, address, email, phone number, or any other data that could identify you personally.</li>
+                    <li><strong>Usage Tracking:</strong> We do not track which images you convert, how often you use specific features, or your general activity within the App.</li>
+                    <li><strong>Third-Party Analytics:</strong> We do not use third-party tools (like Google Analytics) to monitor your use of the application.</li>
+                </ul>
+            </li>
+
+            <li>
+                <h2>2. Information We Collect and How We Use It</h2>
+                <p>RustForge collects and uses data in the following minimal categories, primarily to provide and improve the service.</p>
                 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-chess-board feature-icon"></i>
-                        <h5>VoidWeave Algorithm</h5>
-                        <p>The most advanced painting method for stunning, detailed, high-fidelity images. It intelligently scans your image and blends pixels for the most accurate and beautiful final artwork.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-palette feature-icon"></i>
-                        <h5>Adaptive Palette</h5>
-                        <p>Utilize new Hex Color codes and the Adaptive Palette system to achieve more vibrant and accurate tones, including multiple skin tones, without sacrificing optimized painting performance.</p>
-                    </div>
-                </div>
+                <p><strong>User-Provided Images:</strong> Images are temporarily loaded into your computer's memory (RAM) and processed on your local machine only to convert them into a format compatible with Rust signs. Images are never stored on the Developer’s servers. Data Collection Method: Local, ephemeral storage (RAM)</p>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-redo-alt feature-icon"></i>
-                        <h5>Resume Painting on Click (F5)</h5>
-                        <p>Instantly resume your paint session from any point on the canvas after an interruption. Simply press the hotkey <code class="code-snippet">F5</code> and click to continue exactly where you left off, saving you hours of time.</p>
-                    </div>
-                </div>
+                <p><strong>Configuration Settings:</strong> Local settings like preferred color tolerance, filters, and hotkeys are saved to a local INI or configuration file on your machine. This is necessary to remember your preferences between sessions. Data Collection Method: Local file storage (e.g., UserCFG.ini)</p>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-save feature-icon"></i>
-                        <h5>Session Save & Load</h5>
-                        <p>Save your painting progress and resume later. This is indispensable if you need to reboot your system, close the game, or step away for an extended period, ensuring no progress is ever lost.</p>
-                    </div>
-                </div>
+                <p><strong>MOTD & Update Checks:</strong> The App makes a request to download the Message of the Day (MOTD) text.</p>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-crop-alt feature-icon"></i>
-                        <h5>Integrated Image Editor</h5>
-                        <p>Prepare your artwork without external software! Access an editor directly within RustForge, featuring essential cropping and text overlay functionality for perfect pre-painting preparation.</p>
-                    </div>
-                </div>
+                <p><strong>Discord Rich Presence (DRP) ID:</strong> The App uses your Discord User ID to display your current activity status (e.g., "Painting," "Idle") within Discord. This ID is handled by the Discord RPC library and transmitted to Discord's servers to link the presence to your account. Data Collection Method: Discord RPC Library</p>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-film feature-icon"></i>
-                        <h5>Timelapse GIF Creator & Editor</h5>
-                        <p>An exciting premium feature that automatically captures timelapse screenshots during the painting process and compiles them into a shareable, finished artwork GIF.</p>
-                    </div>
-                </div>
+                <p><strong>Premium Access Token:</strong> If you are a Premium user, a token or identifier may be stored locally or checked against an API endpoint to verify your access to features like VoidWeave or Session Save/Load. Data Collection Method: Local Storage or API Call</p>
+            </li>
 
-            </div>
-        </div>
-    </section>
+            <li>
+                <h2>3. Data Storage, Security, and Retention</h2>
+                <h3>3.1 Local Storage</h3>
+                <p>All your images, painting progress (for Premium users), and configuration settings are stored exclusively on your local computer. The Developer has no access to or control over this data.</p>
 
-    <section class="cta-section" id="comparison">
-        <div class="container">
-            <h2 class="section-title">✨ Free vs. Premium Feature Comparison</h2>
-            <p class="lead mb-5">See how RustForge Premium elevates your sign painting experience with advanced algorithms and quality-of-life tools.</p>
+                <h3>3.2 Security</h3>
+                <p>RustForge uses standard, commercially acceptable means to protect its own software code. However, no method of transmission over the Internet or method of electronic storage is 100% secure.</p>
 
-            <div class="comparison-table-container">
-                <table class="table table-dark table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="text-left"><i class="fa-solid fa-cogs feature-icon-red"></i> Feature</th>
-                            <th scope="col" class="text-center text-light">Free Tier (Standard)</th>
-                            <th scope="col" class="text-center text-warning"><i class="fa-solid fa-gem feature-icon-yellow"></i> Premium Tier</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-left font-weight-bold">Painting Algorithm Quality</td>
-                            <td class="text-center">Standard Dithering / Closest Match</td>
-                            <td class="text-center font-weight-bold text-warning">VoidWeave Algorithm <i class="fa-solid fa-star feature-icon-yellow"></i>
-                                <small class="d-block text-muted">High-fidelity, pixel blending method</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Advanced Color Palette</td>
-                            <td class="text-center">Standard Rust Palette (Limited Colors)</td>
-                            <td class="text-center font-weight-bold text-warning">Adaptive Palette <i class="fa-solid fa-palette feature-icon-yellow"></i>
-                                <small class="d-block text-muted">Vibrant, accurate tones using new Hex Codes</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Resume Painting on Click (<code class="code-snippet">F5</code>)</td>
-                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included
-                                <small class="d-block text-muted">Saves significant time on disconnects</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Session Save & Load</td>
-                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Integrated Image Editor</td>
-                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included
-                                <small class="d-block text-muted">Crop and add text directly in-app</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Timelapse GIF Creator & Editor</td>
-                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included
-                                <small class="d-block text-muted">Automatically create your finished artwork GIF</small>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <h3>3.3 Data Retention</h3>
+                <p>Since we do not collect or store user data on our servers, there is no retention policy for user-generated content or activity logs related to RustForge use.</p>
+            </li>
 
-            <h3 class="hero-subtitle mt-5 mb-4" style="color: var(--text-color);">Ready to Upgrade?</h3>
-            <p>Premium access is granted with <b>ANY</b> donation amount on Buy Me a Coffee. Your support helps fund the continued development and maintenance of RustForge.</p>
-            <a class="btn btn-primary1-pulse btn-lg mt-3" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="background-color: #FF813F; border: none;">
-                <i class="fa-solid fa-mug-hot"></i> Get Premium Access Now
-            </a>
-        </div>
-    </section>
+            <li>
+                <h2>4. Third-Party Services</h2>
+                <p>RustForge relies on the following third-party services, each of which has its own Privacy Policy:</p>
+                <ul>
+                    <li>Discord: Used for Rich Presence functionality.</li>
+                    <li>Personal Server: Used to host the MOTD file and for update checks.</li>
+                    <li>Buy Me a Coffee / Patreon: Payment processors used for donations and Premium access. These services handle your payment and financial data separately.</li>
+                </ul>
+            </li>
+
+            <li>
+                <h2>5. Changes to This Privacy Policy</h2>
+                <p>The Developer may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Effective Date" at the top. You are advised to review this Privacy Policy periodically for any changes.</p>
+            </li>
+
+            <li>
+                <h2>6. Contact Us</h2>
+                <p>If you have any questions about this Privacy Policy, please contact the Developer at:</p>
+                <p>Email: [rustforgedeveloper@gmail.com]</p>
+                <p>Discord Support: [<a target ="_blank" href="https://discord.gg/R4bR9JwAfv">https://discord.gg/R4bR9JwAfv</a>]</p>
+            </li>
+        </ol>
+    </div>
+</section>
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 RustForge. All rights reserved.</p>
             <p class="mb-0">
-                <a href="https://discord.gg/R4bR9JwAfv" class="text-light" style="text-decoration: none;">Discord Support</a> |
-                <a href="https://buymeacoffee.com/rustforgedev" class="text-light" style="text-decoration: none;">Support Development</a>
+                <a href="../tos/index.html" class="text-light" style="text-decoration: none;">Terms of Service</a> |
+                <a href="./privacy/index.html" class="text-light" style="text-decoration: none;">Privacy Policy</a>
             </p>
         </div>
     </footer>

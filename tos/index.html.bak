@@ -21,9 +21,9 @@
             --botpulse-red: #b71349;
             --botpulse-red-dark: #8b2946;
             --dark-bg: #1a1a1a;
-            --dark-section: #212121; 
+            --dark-section: #212121;
             --text-color: #ffffff;
-            --highlight-yellow: #f1c40f; 
+            --highlight-yellow: #f1c40f;
         }
 
         body {
@@ -32,7 +32,6 @@
             color: var(--text-color);
         }
 
-        /* Navbar Styling */
         .navbar-brand {
             font-weight: 700;
             color: var(--text-color) !important;
@@ -60,7 +59,7 @@
         }
 
         .hero-section {
-            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png');
+            background-image: url('https://raw.githubusercontent.com/V0idpool/v0idpool.github.io/refs/heads/main/img/RfSplash.png'); /* RustForge Image */
             background-size: cover;
             background-position: center;
             color: var(--text-color);
@@ -99,6 +98,7 @@
             margin-bottom: 1.5rem;
         }
 
+       
         @media (max-width: 767px) {
         .hero-feature-list li {
         text-align: left;
@@ -309,142 +309,90 @@
         </div>
     </nav>
 
-   <section class="hero-section" id="home">
-        <div class="hero-content">
-            <h1 class="hero-title">RustForge</h1>
-            <p class="hero-subtitle">Premium Access</p>
-            <p class="font-weight-bold mb-4">Unlock the ultimate sign painting experience in Rust. Premium features introduce <b>VoidWeave</b>, advanced color palettes, and essential quality-of-life tools to save you time and maximize artwork quality.</p>
-            <p class="font-weight-bold mb-4">Access is granted with <b>ANY<b> donation amount via Buy Me a Coffee.</p>
-            <p class="font-weight-bold mb-4">All BMAC Subscription tiers offer Early Access builds and more!</p>
+   <section class="main-content">
+        <div class="container">
+            <h1 class="text-center">RustForge Terms of Service</h1>
+            <p class="text-center text-muted">Effective Date: [Oct 22, 2025]</p>
             
+            <p class="mt-4">These Terms of Service ("Terms") govern your use of the RustForge application ("RustForge," "the App," or "the Service"), a third-party utility designed to convert images into Rust in-game sign art. By downloading, installing, or using RustForge, you agree to be bound by these Terms.</p>
 
-<a class="btn btn-primary1-pulse btn-lg" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="background-color: #FF813F; border: none;">
-                <i class="fa-solid fa-mug-hot"></i> Get Premium Access Now
-            </a>
-			<p class="mt-3 text-muted">A one-time donation grants lifetime Premium access.</p>
-        </div>
-    </section>
-    <section class="features-section" id="premium-details">
-        <div class="container">
-            <h2 class="mb-5 text-center section-title" style="color: var(--highlight-yellow);">💎 Advanced Premium Features</h2>
-            <div class="row feature-grid-container">
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-chess-board feature-icon"></i>
-                        <h5>VoidWeave Algorithm</h5>
-                        <p>The most advanced painting method for stunning, detailed, high-fidelity images. It intelligently scans your image and blends pixels for the most accurate and beautiful final artwork.</p>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-palette feature-icon"></i>
-                        <h5>Adaptive Palette</h5>
-                        <p>Utilize new Hex Color codes and the Adaptive Palette system to achieve more vibrant and accurate tones, including multiple skin tones, without sacrificing optimized painting performance.</p>
-                    </div>
-                </div>
+            <ol style="list-style-type: none; padding-left: 0;">
+                <li>
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing or using RustForge, you affirm that you are 13 years of age or older and agree to comply with and be bound by these Terms. If you do not agree, you may not use the Service.</p>
+                </li>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-redo-alt feature-icon"></i>
-                        <h5>Resume Painting on Click (F5)</h5>
-                        <p>Instantly resume your paint session from any point on the canvas after an interruption. Simply press the hotkey <code class="code-snippet">F5</code> and click to continue exactly where you left off, saving you hours of time.</p>
-                    </div>
-                </div>
+                <li>
+                    <h2>2. License and Intellectual Property</h2>
+                    <h3>2.1 License Grant</h3>
+                    <p>RustForge grants you a non-exclusive, non-transferable, revocable license to use the App solely for your personal, non-commercial use on devices that you own or control, subject to these Terms.</p>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-save feature-icon"></i>
-                        <h5>Session Save & Load</h5>
-                        <p>Save your painting progress and resume later. This is indispensable if you need to reboot your system, close the game, or step away for an extended period, ensuring no progress is ever lost.</p>
-                    </div>
-                </div>
+                    <h3>2.2 Intellectual Property</h3>
+                    <p>RustForge and all related content, features, and functionality (including but not limited to the VoidWeave Algorithm, software code, and documentation) are and will remain the exclusive property of [Void Labs] ("The Developer") and are protected by copyright, trademark, and other laws.</p>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-crop-alt feature-icon"></i>
-                        <h5>Integrated Image Editor</h5>
-                        <p>Prepare your artwork without external software! Access an editor directly within RustForge, featuring essential cropping and text overlay functionality for perfect pre-painting preparation.</p>
-                    </div>
-                </div>
+                    <h3>2.3 User-Generated Content (UGC)</h3>
+                    <p>You retain all rights to the images and art you upload to RustForge for conversion. By using the App, you grant the Developer a limited, non-exclusive, royalty-free license to use your uploaded images internally solely for the purpose of processing, testing, or demonstrating the App's functionality. The Developer does not claim ownership of your resulting in-game art.</p>
+                </li>
 
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-film feature-icon"></i>
-                        <h5>Timelapse GIF Creator & Editor</h5>
-                        <p>An exciting premium feature that automatically captures timelapse screenshots during the painting process and compiles them into a shareable, finished artwork GIF.</p>
-                    </div>
-                </div>
+                <li>
+                    <h2>3. Disclaimers and Limitations of Liability</h2>
+                    <h3>3.1 Third-Party Tool Disclaimer</h3>
+                    <p>RustForge is a third-party utility and is not affiliated with, endorsed, or officially connected to Facepunch Studios Ltd. (the creator of the game Rust). The Developer makes no guarantees regarding the use of this App and its compliance with Rust's Terms of Service or anti-cheat measures. You use this App at your own risk.</p>
 
-            </div>
-        </div>
-    </section>
+                    <h3>3.2 "AS IS" Basis</h3>
+                    <p>RustForge is provided on an "AS IS" and "AS AVAILABLE" basis, without warranties of any kind, whether express or implied. The Developer does not warrant that the App will be uninterrupted, secure, or error-free.</p>
 
-    <section class="cta-section" id="comparison">
-        <div class="container">
-            <h2 class="section-title">✨ Free vs. Premium Feature Comparison</h2>
-            <p class="lead mb-5">See how RustForge Premium elevates your sign painting experience with advanced algorithms and quality-of-life tools.</p>
+                    <h3>3.3 Limitation of Liability</h3>
+                    <p>To the maximum extent permitted by applicable law, the Developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or data, whether incurred directly or indirectly, resulting from:</p>
+                    <ul>
+                        <li>Your use or inability to use the Service.</li>
+                        <li>Any conduct or content of any third party on the Service.</li>
+                        <li>Any loss of in-game accounts or assets related to the use of the App.</li>
+                    </ul>
+                </li>
 
-            <div class="comparison-table-container">
-                <table class="table table-dark table-hover table-bordered">
-                    <thead>
-                        <tr>
-                            <th scope="col" class="text-left"><i class="fa-solid fa-cogs feature-icon-red"></i> Feature</th>
-                            <th scope="col" class="text-center text-light">Free Tier (Standard)</th>
-                            <th scope="col" class="text-center text-warning"><i class="fa-solid fa-gem feature-icon-yellow"></i> Premium Tier</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td class="text-left font-weight-bold">Painting Algorithm Quality</td>
-                            <td class="text-center">Standard Dithering / Closest Match</td>
-                            <td class="text-center font-weight-bold text-warning">VoidWeave Algorithm <i class="fa-solid fa-star feature-icon-yellow"></i>
-                                <small class="d-block text-muted">High-fidelity, pixel blending method</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Advanced Color Palette</td>
-                            <td class="text-center">Standard Rust Palette (Limited Colors)</td>
-                            <td class="text-center font-weight-bold text-warning">Adaptive Palette <i class="fa-solid fa-palette feature-icon-yellow"></i>
-                                <small class="d-block text-muted">Vibrant, accurate tones using new Hex Codes</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Resume Painting on Click (<code class="code-snippet">F5</code>)</td>
-                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included
-                                <small class="d-block text-muted">Saves significant time on disconnects</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Session Save & Load</td>
-                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included</td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Integrated Image Editor</td>
-                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included
-                                <small class="d-block text-muted">Crop and add text directly in-app</small>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td class="text-left font-weight-bold">Timelapse GIF Creator & Editor</td>
-                            <td class="text-center"><i class="fa-solid fa-times text-danger"></i> Not Available</td>
-                            <td class="text-center"><i class="fa-solid fa-check text-success"></i> Included
-                                <small class="d-block text-muted">Automatically create your finished artwork GIF</small>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <li>
+                    <h2>4. Premium Access and Donations</h2>
+                    <h3>4.1 Premium Features</h3>
+                    <p>Certain advanced features (e.g., VoidWeave Algorithm, Session Save/Load, Resume Painting) are designated as "Premium" and require a donation or subscription to access. Access is granted as outlined on the donation/Patreon page.</p>
 
-            <h3 class="hero-subtitle mt-5 mb-4" style="color: var(--text-color);">Ready to Upgrade?</h3>
-            <p>Premium access is granted with <b>ANY</b> donation amount on Buy Me a Coffee. Your support helps fund the continued development and maintenance of RustForge.</p>
-            <a class="btn btn-primary1-pulse btn-lg mt-3" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="background-color: #FF813F; border: none;">
-                <i class="fa-solid fa-mug-hot"></i> Get Premium Access Now
-            </a>
+                    <h3>4.2 Payments and Refunds</h3>
+                    <p>All donations and payments for Premium access are non-refundable. Premium access is provided as an appreciation for supporting ongoing development. Access may be revoked without refund if you violate these Terms or abuse the service.</p>
+
+                    <h3>4.3 Feature Changes</h3>
+                    <p>The Developer reserves the right to change, modify, or discontinue any Premium or free feature at any time without notice.</p>
+                </li>
+
+                <li>
+                    <h2>5. Prohibited Uses</h2>
+                    <p>You agree not to use the App in any way that violates these Terms or applicable local, state, federal, or international law. Prohibited activities include, but are not limited to:</p>
+                    <ul>
+                        <li>Using the App to create or disseminate content that is illegal, racist, hateful, harassing, or that infringes on any third party's rights.</li>
+                        <li>Attempting to reverse-engineer, decompile, or create derivative works of RustForge.</li>
+                        <li>Using automated means (bots, scripts, etc.) to interact with the App outside of its intended purpose.</li>
+                    </ul>
+                </li>
+
+                <li>
+                    <h2>6. Termination</h2>
+                    <p>The Developer may terminate or suspend your access to the Service immediately, without prior notice or liability, for any reason whatsoever, including, without limitation, if you breach the Terms. Upon termination, your right to use the Service will immediately cease.</p>
+                </li>
+
+                <li>
+                    <h2>7. Governing Law</h2>
+                    <p>These Terms shall be governed and construed in accordance with the laws of [The United States of America], without regard to its conflict of law provisions.</p>
+                </li>
+
+                <li>
+                    <h2>8. Changes to Terms</h2>
+                    <p>We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material, we will provide at least 30 days' notice before any new terms take effect. By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms.</p>
+                </li>
+
+                <li>
+                    <h2>9. Contact Information</h2>
+                    <p>If you have any questions about these Terms, please contact us at: [rustforgedeveloper@gmail.com]</p>
+                </li>
+            </ol>
         </div>
     </section>
     <footer class="footer">

@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="../style/style.css">
     <meta name="description" content="RustForge automatically converts images to the Rust color palette and paints them onto in-game signs with precision. Supports adaptive palette, resume painting, and an integrated editor.">
     <meta property="og:title" content="RustForge | Automated In-Game Sign Painter for Rust" />
     <meta property="og:url" content="https://v0idpool.github.io/" /> <meta property="og:type" content="website" />
@@ -292,16 +292,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="/"><i class="fa-solid fa-house"></i> Home</a>
+                        <a class="nav-link" href="#home"><i class="fa-solid fa-house"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/features"><i class="fa-solid fa-wrench"></i> Features</a>
+                        <a class="nav-link" href="#features"><i class="fa-solid fa-wrench"></i> Features</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/premium"><i class="fa-solid fa-star"></i> Premium</a>
+                        <a class="nav-link" href="#premium"><i class="fa-solid fa-star"></i> Premium</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/how-to"><i class="fa-solid fa-book"></i> How to Use</a>
+                        <a class="nav-link" href="#how-to-use"><i class="fa-solid fa-book"></i> How to Use</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="https://discord.gg/R4bR9JwAfv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
@@ -339,122 +339,256 @@
                 </a>
         </div>
     </section>
+<section id="premium-glance" class="cta-section">
+            <div class="container">
+                <h2 class="section-title">RustForge Premium</h2>
+                <p class="lead mb-5">Unlock advanced features and support development to help keep RustForge free for everyone.</p>
 
-		
-    <section class="cta-section" id="features">
-        <div class="container feature-grid-container">
-            <h2 class="section-title">✨ Core Features</h2>
-            <p class="lead mb-5">High-quality art for your base, simplified. Here are the powerful features included for **free**.</p>
-            <div class="row mt-4">
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-ban feature-icon"></i>
-                        <div class="feature-card-title">
-                            <h5>Background Color Ignore</h5>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8 col-md-10">
+                        <div class="feature-card" style="background-color: #2b2b2b; padding: 30px; border: 3px solid var(--botpulse-red); box-shadow: 0 0 20px rgba(183, 19, 73, 0.4);">
+                            <i class="fa-solid fa-gem feature-icon" style="font-size: 3rem; color: #ffdd57;"></i>
+                            <h5 class="mt-3" style="color: #ffdd57;">Key Premium Benefits</h5>
+                            <ul class="list-unstyled text-left mx-auto" style="max-width: 350px; margin-top: 20px;">
+                                <li class="mb-2"><i class="fa-solid fa-check highlight-text-red mr-2"></i> **VoidWeave Algorithm:** The most advanced, high-fidelity painting method.</li>
+                                <li class="mb-2"><i class="fa-solid fa-check highlight-text-red mr-2"></i> **Adaptive Palette:** For more vibrant and accurate color tones.</li>
+                                <li class="mb-2"><i class="fa-solid fa-check highlight-text-red mr-2"></i> **Resume Painting on Click:** Save time and never lose progress.</li>
+                            </ul>
+                            <hr style="border-color: #444;">
+                            <h5 class="mt-4 mb-3" style="color: var(--text-color);">How to get Premium:</h5>
+                            <a href="https://buymeacoffee.com/rustforgedev" target="_blank" class="btn btn-rustforge btn-lg" style="background-color: #FF813F; border: none;">
+                                <i class="fa-solid fa-mug-hot"></i> Donate on Buy Me a Coffee
+                            </a>
+                            <a href="/premium.html" class="btn btn-rustforge btn-lg btn-secondary" style="background-color: #444;">
+                                <i class="fa-solid fa-circle-info"></i> View All Premium Features
+                            </a>
                         </div>
-                        <p class="mb-0">Select a specific color to be **skipped entirely** (e.g., white borders) to save
-                            significant painting time.</p>
                     </div>
                 </div>
-
+            </div>
+        </section>
+   <section class="cta-section" id="features">
+       <div class="container feature-grid-container">
+            <h2 class="section-title">Key Features</h2>
+            <div class="row mt-4">
+                
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
-                        <i class="fa-solid fa-folder-open feature-icon"></i>
+                        <i class="fa-solid fa-folder-open feature-icon"></i> 
                         <div class="feature-card-title">
+                            
                             <h5>Load Recent Files</h5>
                         </div>
-                        <p class="mb-0">Quickly access the last **10 used images** from a new menu item, skipping the need
-                            to re-select from your computer or enter a URL.</p>
+                        <p class="mb-0">Quickly access the last 10 used images from a new menu.</p>
                     </div>
                 </div>
 
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-ban feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
+                            <h5>Background Color Ignore</h5>
+                        </div>
+                        <p class="mb-0">Skip specific colors during painting (e.g., white borders) to save time.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-sliders feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
+                            <h5>Customizable Color Tolerance</h5>
+                        </div>
+                        <p class="mb-0">Fine-tune how strictly background colors are ignored.</p>
+                    </div>
+                </div>
+                
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
                         <i class="fa-solid fa-swatchbook feature-icon"></i>
                         <div class="feature-card-title">
+                             
                             <h5>Color Space Selection</h5>
                         </div>
-                        <p class="mb-0">Choose between Euclidean RGB or **CIEDE2000** for the most perceptually accurate
-                            color matching to the Rust palette.</p>
+                        <p class="mb-0">Choose between Euclidean RGB or CIEDE2000 for color matching.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
-                        <i class="fa-brands fa-discord feature-icon"></i>
+                        <i class="fa-solid fa-eye-dropper feature-icon"></i> 
                         <div class="feature-card-title">
+                            
+                            <h5>Transparency Threshold Setting</h5>
+                        </div>
+                        <p class="mb-0">Define a threshold for alpha transparency to skip highly transparent pixels.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-brands fa-discord feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
                             <h5>Discord Rich Presence</h5>
                         </div>
-                        <p class="mb-0">Your painting status (**Paused, Painting, Completed**) and current job information
-                            will now be displayed in your Discord profile.</p>
+                        <p class="mb-0">Display your painting status in your Discord profile.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
-                        <i class="fa-solid fa-clock feature-icon"></i>
+                        <i class="fa-solid fa-camera-retro feature-icon"></i> 
                         <div class="feature-card-title">
+                            
+                            <h5>Screenshot on Finish Toggle</h5>
+                        </div>
+                        <p class="mb-0">Automatically capture a screenshot of your finished painting.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-rocket feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
+                            <h5>Dedicated Splash Screen</h5>
+                        </div>
+                        <p class="mb-0">Smoother startup experience with an elegant loading process.</p>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-bug feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
+                            <h5>Advanced Error Logging & Support Integration</h5>
+                        </div>
+                        <p class="mb-0">Enhanced logging to <span class="code-snippet">RF_Logs.txt</span> and quick access to Discord support.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-clock feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
                             <h5>Mouse Click Delay Setting</h5>
                         </div>
-                        <p class="mb-0">Precisely control the delay for automated mouse movements (like brush selection)
-                            to ensure reliability on various systems and server conditions.</p>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card">
-                        <i class="fa-solid fa-hourglass-half feature-icon"></i>
-                        <div class="feature-card-title">
-                            <h5>Accurate Painting Time Estimation</h5>
-                        </div>
-                        <p class="mb-0">A dedicated form displays an accurate estimated painting time **before** it even
-                            begins, which reflects time savings from skipping background colors.</p>
+                        <p class="mb-0">Control delay for automated mouse movements for reliability.</p>
                     </div>
                 </div>
 
             </div>
-
+            
             <h3 class="hero-subtitle mt-5 mb-3" style="color: var(--text-color);">🎨 Multiple Painting Methods</h3>
-            <div class="row justify-content-center">
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-brush feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
+                            <h5>VoidWeave Algorithm</h5> 
+                            <small>(Premium)</small>
+                        </div>
+                        <p class="mb-0">Default, most advanced, high-fidelity for complex images. Scans the image, and blends pixels as it paints.</p>
+                    </div>
+                </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
-                        <i class="fa-solid fa-arrow-right feature-icon"></i>
+                        <i class="fa-solid fa-arrow-right feature-icon"></i> 
                         <div class="feature-card-title">
+                            
                             <h5>Scanline</h5>
                         </div>
-                        <p class="mb-0">A methodical, reliable, line-by-line painting method for a clean finish.</p>
+                        <p class="mb-0">Methodical, line-by-line painting.</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
                     <div class="feature-card">
-                        <i class="fa-solid fa-paint-roller feature-icon"></i>
+                        <i class="fa-solid fa-paint-roller feature-icon"></i> 
                         <div class="feature-card-title">
+                            
                             <h5>Crayon Eater</h5>
                         </div>
-                        <p class="mb-0">A distinct painting style that adds character to your final image, prioritizing color usage.</p>
+                        <p class="mb-0">Distinct painting style with character.</p>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <section class="cta-section" id="how-to-use">
+       <div class="container feature-grid-container">
+            <h2 class="section-title">How to Use RustForge</h2>
+            
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-file-image feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
+                            <h5>Load an Image</h5>
+                        </div>
+                        <p class="mb-0">Use the main RustForge window to load your desired image by clicking "Load Image...".</p>
                     </div>
                 </div>
 
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="feature-card" style="border: 3px solid var(--botpulse-red); background-color: #311822;">
-                        <i class="fa-solid fa-star feature-icon" style="color: var(--highlight-yellow);"></i>
+                    <div class="feature-card">
+                        <i class="fa-solid fa-crosshairs feature-icon"></i> 
                         <div class="feature-card-title">
-                            <h5><span class="highlight-text-red">Premium Upgrade</span></h5>
+                            
+                            <h5>Capture Your Regions</h5>
+                            <small class="ml-2">(Press <span class="code-snippet">Enter</span> after setting Canvas/Palette areas to save)</small>
                         </div>
-                        <p class="mb-3">Unlock the **VoidWeave Algorithm** for stunning, high-fidelity images, **Adaptive Palette** (up to 512 colors), and the essential **Resume Painting on Click** (<span class="code-snippet">F5</span>) feature.</p>
-                        <a href="/premium" class="btn btn-rustforge btn-sm mt-2" style="background-color: var(--botpulse-red);"><i class="fa-solid fa-diamond"></i> Learn More</a>
+                        <p class="mb-1"><i class="fa-solid fa-paint-brush"></i> <span class="highlight-text-red">Palette</span>: Use hotkey (<span class="code-snippet">F10</span> default) to draw a box around the in-game color palette. (ONLY CAPTURE THE COLOR PALETTE AREA)</p>
+                        <p class="mb-0"><i class="fa-solid fa-vector-square"></i> <span class="highlight-text-red">Canvas</span>: Use hotkey (<span class="code-snippet">F9</span> default) to draw a box around the in-game canvas where painting will occur.</p>
                     </div>
                 </div>
 
-            </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-gear feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
+                            <h5>Configure Settings</h5>
+                        </div>
+                        <p class="mb-0">In the settings window, select your preferred paint method, apply filters, and adjust paint speed.</p>
+                    </div>
+                </div>
 
-        </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-play feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
+                            <h5>Start Painting</h5>
+                        </div>
+                        <p class="mb-0">Once processed and regions defined, press the "Start" hotkey (<span class="code-snippet">F11</span> default) to begin.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="feature-card">
+                        <i class="fa-solid fa-pause feature-icon"></i><i class="fa-solid fa-stop ml-1 feature-icon"></i> 
+                        <div class="feature-card-title">
+                            
+                            <h5>Pause and Stop</h5>
+                        </div>
+                        <p class="mb-0">Use assigned hotkeys (<span class="code-snippet">F11</span> for pause, <span class="code-snippet">Escape</span> for stop) to control painting.</p>
+                    </div>
+                </div>
+            </div>
+            </div>
     </section>
 
-   
     <footer class="footer">
         <div class="container">
             <p>&copy; 2024 RustForge. All rights reserved.</p>

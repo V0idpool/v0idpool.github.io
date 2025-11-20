@@ -301,7 +301,7 @@
                         <a class="nav-link" href="https://discord.gg/R4bR9JwAfv" target="_blank"><i class="fa-brands fa-discord"></i> Discord</a>
                     </li>
                     <li class="nav-item d-flex align-items-center">
-                        <a class="btn btn-primary1-pulse" href="https://buymeacoffee.com/rustforgedev" target="_blank" style="margin-left: 15px;">
+                        <a class="btn btn-primary1-pulse" href="https://github.com/V0idpool/RustForge/releases/latest" target="_blank" style="margin-left: 15px;">
                             <i class="fa-solid fa-download" style="margin-right: 8px;"></i>  
                             <span>Download</span>
                         </a>
@@ -320,10 +320,10 @@
             <p>It’s perfect for adding custom, high-quality art to your base without spending hours on it.</p>
             
             <ul class="hero-feature-list">
-                <li><i class="fa-solid fa-paintbrush" style="margin-right: 10px; color: var(--botpulse-red);"></i> Automated In-Game Painting</li>
-                <li><i class="fa-solid fa-palette" style="margin-right: 10px; color: var(--botpulse-red);"></i> Adaptive Color Palette Support</li>
-                <li><i class="fa-solid fa-image" style="margin-right: 10px; color: var(--botpulse-red);"></i> Integrated Image Editor (Premium)</li>
-            </ul>
+            <li><p class="lead mb-5"><i class="fa-solid fa-brush" style="margin-right: 10px; color: var(--botpulse-red);"></i> Precision Painting: Automated, pixel-perfect in-game sign creation.</p></li>
+            <li><p class="lead mb-5"><i class="fa-solid fa-palette" style="margin-right: 10px; color: var(--botpulse-red);"></i> Adaptive Color: Supports up to 512 colors for richer artwork. (Premium)</p></li>
+            <li><p class="lead mb-5"><i class="fa-solid fa-gem" style="margin-right: 10px; color: var(--botpulse-red);"></i> Premium: Use advanced features like the Integrated Image Editor, Session Save & Resume, Timelapses, and more.</p></li>
+        </ul>
 
            <a href="https://github.com/V0idpool/RustForge/releases/latest" target="_blank" class="btn btn-rustforge btn-lg">
                     <i class="fa-solid fa-download"></i> Download Latest Version

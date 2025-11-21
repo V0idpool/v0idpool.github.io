@@ -320,9 +320,9 @@
             <p>It’s perfect for adding custom, high-quality art to your base without spending hours on it.</p>
             
             <ul class="hero-feature-list">
-            <li><p class="lead mb-5"><i class="fa-solid fa-brush" style="margin-right: 10px; color: var(--botpulse-red);"></i> Precision Painting: Automated, pixel-perfect in-game sign creation.</p></li>
-            <li><p class="lead mb-5"><i class="fa-solid fa-palette" style="margin-right: 10px; color: var(--botpulse-red);"></i> Adaptive Color: Supports up to 512 colors for richer artwork. (Premium)</p></li>
-            <li><p class="lead mb-5"><i class="fa-solid fa-gem" style="margin-right: 10px; color: var(--botpulse-red);"></i> Premium: Use advanced features like the Integrated Image Editor, Session Save & Resume, Timelapses, and more.</p></li>
+            <li><p class="lead"><i class="fa-solid fa-brush" style="margin-right: 10px; color: var(--botpulse-red);"></i> Precision Painting: Automated, pixel-perfect in-game sign creation.</p></li>
+            <li><p class="lead"><i class="fa-solid fa-palette" style="margin-right: 10px; color: var(--botpulse-red);"></i> Adaptive Color: Supports up to 512 colors for richer artwork. (Premium)</p></li>
+            <li><p class="lead"><i class="fa-solid fa-gem" style="margin-right: 10px; color: var(--botpulse-red);"></i> Premium: Use advanced features like the Integrated Image Editor, Session Save & Resume, Timelapses, and more.</p></li>
         </ul>
 
            <a href="https://github.com/V0idpool/RustForge/releases/latest" target="_blank" class="btn btn-rustforge btn-lg">
@@ -332,13 +332,23 @@
                     <i class="fa-brands fa-discord"></i> Discord Support
                 </a>
         </div>
+		
     </section>
 
 		
     <section class="cta-section" id="features">
         <div class="container feature-grid-container">
+		 <div class="feature-card" style="border: 3px solid var(--botpulse-red); background-color: #311822;">
+                        <i class="fa-solid fa-star feature-icon" style="color: var(--highlight-yellow);"></i>
+                        <div class="feature-card-title">
+                            <h5><span class="highlight-text-red">Premium Upgrade</span></h5>
+                        </div>
+                        <p class="mb-3">Unlock the VoidWeave Algorithm for stunning, high-fidelity images, Adaptive Palette (up to 512 colors), and the essential Resume Painting on Click (<span class="code-snippet">F5</span>) feature.</p>
+                        <a href="/premium" class="btn btn-rustforge btn-sm mt-2" style="background-color: var(--botpulse-red);"><i class="fa-solid fa-diamond"></i> Learn More</a>
+                    </div>
             <h2 class="section-title">✨ Core Features</h2>
             <p class="lead mb-5">High-quality art for your base, simplified. Here are the powerful features included for FREE.</p>
+
             <div class="row mt-4">
 
                 <div class="col-lg-4 col-md-6 mb-4">
@@ -435,14 +445,7 @@
                 </div>
 
                 
-                    <div class="feature-card" style="border: 3px solid var(--botpulse-red); background-color: #311822;">
-                        <i class="fa-solid fa-star feature-icon" style="color: var(--highlight-yellow);"></i>
-                        <div class="feature-card-title">
-                            <h5><span class="highlight-text-red">Premium Upgrade</span></h5>
-                        </div>
-                        <p class="mb-3">Unlock the VoidWeave Algorithm for stunning, high-fidelity images, Adaptive Palette (up to 512 colors), and the essential Resume Painting on Click (<span class="code-snippet">F5</span>) feature.</p>
-                        <a href="/premium" class="btn btn-rustforge btn-sm mt-2" style="background-color: var(--botpulse-red);"><i class="fa-solid fa-diamond"></i> Learn More</a>
-                    </div>
+                   
 
             </div>
 
